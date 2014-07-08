@@ -1,0 +1,37 @@
+<div class="lisette-module-topbar">
+    <div class="lisette-module-actionbar">
+        <button href="#"
+            class="btn btn-primary"
+            ng-click="addRow()">
+            Add row
+        </button>
+    </div>
+</div>
+
+<div class="lisette-module-body">
+    <table class="table"
+        ev-fixed-headers rows="data.rows"
+        selectable-set
+        selected-elements="context.grid.selected">
+        <thead>
+            <tr sortable-set
+                sort-by="context.grid.sort.by"
+                sort-change="sort()"
+                reverse-sort="context.grid.sort.reverse">
+                <th><select-all /></th>
+                <th ng-repeat="col in data.cols"
+                    sortable="{{ col }}"
+                    ng-bind="col"></th>
+            </tr>
+        </thead>
+        <tbody activable-set
+            active-element="context.grid.active">
+            <tr ng-repeat="row in data.rows"
+                activable="row"
+                selectable="row">
+                <td><select-box class="block-active"/></td>
+                <td ng-repeat="col in data.cols" ng-bind="row.cells[col]"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

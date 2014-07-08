@@ -1,0 +1,86 @@
+<ev-filters ng-cloak filters="context.selectedFilters">
+    <li>
+        <label for="userRole">Titre</label>
+        <div class="control">
+            <input
+                ng-model="context.selectedFilters.title"
+                throttle
+                clearable
+                ng-change="onSearch()"
+                class="form-control" />
+        </div>
+    </li>
+    <li>
+        <label for="userRole">Destinataire</label>
+        <div class="control">
+            <select
+                type="hidden"
+                ui-select2
+                id="userRole"
+                name="userRole"
+                ng-change="onSearch()"
+                class="searchFilter"
+                ng-model="context.selectedFilters.userRole"
+                data-placeholder="Tous">
+                <option selected="selected" value=""></option>
+                <option value="traveller">Voyageur</option>
+                <option value="localAgent">Agent local</option>
+                <option value="evaneos">Evaneos</option>
+            </select>
+        </div>
+    </li>
+    <li>
+        <label for="show">Visible</label>
+        <div class="control">
+            <select
+                type="hidden"
+                ui-select2
+                id="show"
+                name="show"
+                ng-change="onSearch()"
+                class="searchFilter"
+                ng-model="context.selectedFilters.show"
+                data-placeholder="Tous">
+                <option selected="selected" value=""></option>
+                <option value="1">Visible</option>
+                <option value="0">Non visible</option>
+            </select>
+        </div>
+    </li>
+    <li>
+        <label for="show">Fruits</label>
+        <ul class="checkboxes">
+            <li ng-repeat="item in context.fruits">
+                <label>
+                    <input type="checkbox" class="checkbox"
+                        ng-change="onSearch()"
+                        checklist-model="context.selectedFilters.fruits"
+                        checklist-value="item.value"
+                        ng-class="{ active: context.selectedFilters.fruits[item.value] }">
+                    <span ng-bind="item.name"></span>
+                </label>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <label for="show">Sports</label>
+        <ul class="radioboxes">
+            <li ng-repeat="item in context.sports">
+                <label>
+                    <input type="radio"
+                        ng-change="onSearch()"
+                        class="radiobox"
+                        ng-model="context.selectedFilters.sport"
+                        ng-value="item.value"></span>
+                    <span ng-bind="item.name"></span>
+                </label>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <label>Anniversaire
+                <input ui-date
+                    class="form-control" ng-model="context.selectedFilters.birthday"/>
+        </label>
+    </li>
+</ev-filters>
