@@ -1,4 +1,4 @@
-ev-fdm-demo
+EV-FDM DEMO
 ===========
 
 ## Getting started
@@ -26,4 +26,18 @@ $ grunt default watch
 
 ```
 jekyll serve --watch
+```
+
+## Usefull links
+
+- [EVFDM demo website](http://evfdmdemo.dev.evaneos.com)
+- [EVFDM source code](https://github.com/evaneos/ev-fdm)
+- [Jekyll documentation](http://jekyllrb.com/)
+
+## Deploy
+
+Use fabric with the following command:
+
+```
+fab deploy:branch=master
 ```
