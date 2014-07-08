@@ -1,5 +1,5 @@
-<div class="header">
-    <span class="title" ng-bind="(item ? 'Details' : 'List') + $instance.$$id"></span>
+<div class="panel-header">
+    <span class="panel-title" ng-bind="(item ? 'Details' : 'List') + $instance.$$id"></span>
     <button type="button"
         class="close"
         ng-click="$dismiss()">
@@ -24,7 +24,7 @@
 
 </div>
 
-<div class="body">
+<div class="panel-body">
 
     <div ng-if="item">
         <h4>Details</h4>
