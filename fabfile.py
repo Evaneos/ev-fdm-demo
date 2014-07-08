@@ -123,7 +123,7 @@ def release():
     with settings(warn_only=True):
         run('rm %s/production' % env.directory)
 
-    run('ln -s %s/versions/%s %s/production' % (env.directory, lastVersion, env.directory))
+    run('ln -s %s/versions/%s/_site %s/production' % (env.directory, lastVersion, env.directory))
     if env.slackChannel:
         projectName = env.project.title()
         run('curl -X POST --data-urlencode \'payload={"channel": "%s", "username": "%s bot", "text": "%s: New version deployed: %s", "icon_emoji": ":computer:"}\' https://evaneos.slack.com/services/hooks/incoming-webhook?token=4G16wMjFee3ghYq359bG4Lkm' % (env.slackChannel, projectName, env.siteUrl, lastVersion))

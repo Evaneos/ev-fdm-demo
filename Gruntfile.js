@@ -48,6 +48,9 @@ module.exports = function(grunt) {
     exec: {
         serve: {
             cmd: 'jekyll serve --watch'
+        },
+        dist: {
+            cmd: 'jekyll build'
         }
     },
     watch: {
@@ -58,5 +61,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['less:demo', 'copy']);
+  grunt.registerTask('default', ['less:demo', 'copy', 'exec:build']);
 };
