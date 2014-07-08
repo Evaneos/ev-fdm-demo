@@ -61,5 +61,5 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['less:demo', 'copy', 'exec:build']);
+  grunt.registerTask('default', ['less:demo', 'copy', 'exec:dist']);
 };
