@@ -6,44 +6,10 @@ app_stylesheet: leaflet.css
 ---
 <div class="controller-demo" ng-app="demo">
 
-<div ui-view></div>
+    <div ui-view></div>
 
-<div class="lisette-module-region right " style="display:block">
-</div>
-
-<script type='text/ng-template' id='index.phtml'>
-</script>
-
-<script type='text/ng-template' id='panels/right-window.phtml'>
-    <div class="panel {{ panelClass }}">
-        <div class="inner" ng-transclude>
-        </div>
+    <div class="lisette-module-region right" style="display:block">
     </div>
-</script>
-
-
-<script type='text/ng-template' id='demopanel.phtml'>
-    <div class="header">
-        <span class="title">Leaflet inside a panel</span>
-        <button type="button"
-            class="close"
-            ng-click="$dismiss()">
-            &times;
-        </button>
-    </div>
-
-    <div class="body">
-        <div class="section">
-            <h4>Non editable</h4>
-            <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="false" />
-        </div>
-        <hr />
-        <div class="section">
-            <h4>Editable</h4>
-            <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="true" />
-        </div>
-    </div>
-</script>
 
 </div>
 
