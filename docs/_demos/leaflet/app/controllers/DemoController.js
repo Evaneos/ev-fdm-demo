@@ -3,7 +3,6 @@ angular.module('demo')
         panelService.open('right', {
             templateUrl: 'demopanel.phtml',
             push: true,
-            controller: 'PanelController',
-            panelClass: ''
+            controller: 'PanelController'
         });
 }]);

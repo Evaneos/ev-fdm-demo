@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Leaflet demo
+title: Leaflet
 is_index: true
 app_stylesheet: leaflet.css
 ---
@@ -8,13 +8,10 @@ app_stylesheet: leaflet.css
 
 <div ui-view></div>
 
-<div class="lisette-module-region right animate">
+<div class="lisette-module-region right " style="display:block">
 </div>
 
 <script type='text/ng-template' id='index.phtml'>
-  <div>
-    Hello world
-  </div>
 </script>
 
 <script type='text/ng-template' id='panels/right-window.phtml'>
@@ -27,7 +24,7 @@ app_stylesheet: leaflet.css
 
 <script type='text/ng-template' id='demopanel.phtml'>
     <div class="header">
-        <span class="title">Leaflet demo</span>
+        <span class="title">Leaflet inside a panel</span>
         <button type="button"
             class="close"
             ng-click="$dismiss()">
@@ -36,7 +33,15 @@ app_stylesheet: leaflet.css
     </div>
 
     <div class="body">
-        <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="false" />
+        <div class="section">
+            <h4>Non editable</h4>
+            <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="false" />
+        </div>
+        <hr />
+        <div class="section">
+            <h4>Editable</h4>
+            <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="true" />
+        </div>
     </div>
 </script>
 
