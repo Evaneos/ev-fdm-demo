@@ -28,6 +28,10 @@ $ grunt default watch
 jekyll serve --watch
 ```
 
+## Folder structure
+
+Each demo has its own separated application. All the application folder can be found in `docs/_demos`.
+
 ## Usefull links
 
 - [EVFDM demo website](http://evfdmdemo.dev.evaneos.com)

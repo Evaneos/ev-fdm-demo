@@ -1,0 +1,33 @@
+---
+layout: default
+title: Upload
+is_index: true
+---
+<div class="lisette-body" ng-app="upload-demo">
+    <div class="container" ui-view ng-init="pictures = []">
+        <h2> Picture upload directive </h2>
+        <p>
+            Check my <a href="https://github.com/Evaneos/ev-fdm/blob/eve-84/plugins/upload/js/directives/pictureUploadDirective.js"> Source code </a>
+        </p>
+        <br>
+        <div class="thumbnail" style="width:250px;">
+        	<ev-picture-upload
+        		url="/pictures/upload"
+        		picture-success="pictures.push(picture)"/>
+        </div>
+        <br>
+        <h4> List of pictures object from the directive </h4>
+        <pre><code>
+            <div ng-repeat="picture in pictures">
+                {{JSON.stringify(picture)}}
+            </div>
+        </code></pre>
+    </div>
+</div>
+
+
+{% include script.html %}
+<script src="https://code.angularjs.org/1.2.6/angular-mocks.js"></script>
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/dropzone/downloads/dropzone.js'></script>
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/ev-fdm/dist/plugins/upload/ev-fdm-upload.js'></script>
+<script type='text/javascript' src='app/app.js'></script>
