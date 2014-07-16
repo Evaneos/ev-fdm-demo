@@ -26,23 +26,17 @@ module.exports = function(grunt) {
         }
     },
     copy: {
-        'jquery-ui': {
+        'fonts': {
             expand: true,
-            cwd: '<%= components_dir %>/jquery-ui/themes/smoothness/images',
-            src: '**',
-            dest: '<%= dist_dir %>/images/'
-        },
-        'bootstrap': {
-            expand: true,
-            cwd: '<%= components_dir %>/bootstrap/fonts',
+            cwd: '<%= components_dir %>/ev-fdm/dist/fonts',
             src: '**',
             dest: '<%= dist_dir %>/fonts/'
         },
-        'fonts': {
+        'images': {
             expand: true,
-            cwd: '<%= components_dir %>/ev-fdm/fonts',
+            cwd: '<%= components_dir %>/ev-fdm/dist/images',
             src: '**',
-            dest: '<%= dist_dir %>/css/fonts/'
+            dest: '<%= dist_dir %>/images/'
         }
     },
     exec: {
