@@ -23,9 +23,7 @@ is_index: true
         <br>
         <h4> List of pictures object from the directive </h4>
         <pre><code>
-            <div ng-repeat="picture in pictures">
-                {{JSON.stringify(picture)}}
-            </div>
+            {{pictures | json}}
         </code></pre>
     </div>
 </div>
