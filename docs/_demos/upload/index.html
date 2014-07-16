@@ -3,16 +3,21 @@ layout: default
 title: Upload
 is_index: true
 ---
+{% raw %}
+<!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
 <div class="lisette-body" ng-app="upload-demo">
-    <div class="container" ui-view ng-init="pictures = []">
+    <div class="container" ui-view ng-controller="demo">
         <h2> Picture upload directive </h2>
         <p>
             Check my <a href="https://github.com/Evaneos/ev-fdm/blob/eve-84/plugins/upload/js/directives/pictureUploadDirective.js"> Source code </a>
         </p>
         <br>
+        <p>
+            Upload Url: <input type="text" ng-model="uploadUrl" style="width:400px;">
+        </p>
         <div class="thumbnail" style="width:250px;">
         	<ev-picture-upload
-        		url="/pictures/upload"
+        		url="{{uploadUrl}}"
         		picture-success="pictures.push(picture)"/>
         </div>
         <br>
@@ -24,6 +29,7 @@ is_index: true
         </code></pre>
     </div>
 </div>
+{% endraw %}
 
 
 {% include script.html %}

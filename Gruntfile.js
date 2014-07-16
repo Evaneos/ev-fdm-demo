@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     less: {
         options: {
             paths: [
-                'less', '<%= components_dir %>'
+                'less', '<%= components_dir %>', '<%= components_dir %>/ev-fdm/core/less'
             ]
         },
         demo: {
