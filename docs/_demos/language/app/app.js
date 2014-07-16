@@ -7,6 +7,6 @@
 			};
 		})
 		.config(['evSelectLanguageProvider', function (cfg) {
-			cfg.setLanguages(['fr', 'en', 'es', 'it']);
+			cfg.setAvailableLang(['fr', 'en', 'es', 'it']);
 		}]);
 }) ();
