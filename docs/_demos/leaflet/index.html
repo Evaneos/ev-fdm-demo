@@ -4,13 +4,24 @@ title: Leaflet
 is_index: true
 app_stylesheet: leaflet.css
 ---
-
+{% raw %}
 <div class="controller-demo" ng-app="demo">
-    <div ui-view></div>
+    <div class="container lisette-body" ui-view ng-init="coord={}">
+        <h2> Leaflet directive </h2>
+        <p>You can configure me with special icons</p>
+        <br>
+        <h3>Demo </h3>
+        <div>
+            <ev-leaflet coordinate="coord" editable="true" />
+        </div>
+        <br>
+        <code> coordinate: {{coord | json}} </code>
+    </div>
 
     <div class="lisette-module-region right" style="display:block">
     </div>
 </div>
+{% endraw %}
 {% include script.html %}
 
 
