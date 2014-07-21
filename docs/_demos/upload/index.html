@@ -15,11 +15,9 @@ is_index: true
         <p>
             Upload Url: <input type="text" ng-model="uploadUrl" style="width:400px;">
         </p>
-        <div class="thumbnail" style="width:250px;">
-        	<ev-picture-upload
-        		url="{{uploadUrl}}"
-        		picture-success="pictures.push(picture)"/>
-        </div>
+    	<ev-picture-upload
+    		url="{{uploadUrl}}"
+    		picture-success="pictures.push(picture)"/>
         <br>
         <h4> List of pictures object from the directive </h4>
         <pre><code>
