@@ -1,0 +1,36 @@
+---
+layout: default
+title: Components
+is_index: true
+---
+{% raw %}
+<!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
+<div class="lisette-body">
+    <div class="container" ui-view>
+        <h1>Components - CSS</h1>
+        <p>
+            This is a list of the different component / default class available in ev-fdm.
+        </p>
+
+        <h2> Buttons </h2>
+        <h3> Several size </h3>
+        <p> Three classes exists: <code>btn-lg</code> <code>btn-sm</code> and <code>btn-xs</code>
+        <div class="section">
+            <button class="btn btn-default btn-lg">Large</button>
+            <button class="btn btn-default">Default</button>
+            <button class="btn btn-default btn-sm">Small</button>
+            <button class="btn btn-default btn-xs">Extra Small</button>
+        </div>
+        <h3> Button group </h3>
+        <div class="btn-group">
+            <button class="btn btn-lg btn-default"> 1 </button>
+            <button class="btn btn-lg btn-default"> 2 </button>
+            <button class="btn btn-lg btn-default"> 3 </button>
+            <button class="btn btn-lg btn-default"> 4 </button>
+        </div>
+    </div>
+</div>
+{% endraw %}
+
+
+{% include script.html %}
