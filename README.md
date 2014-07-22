@@ -9,6 +9,13 @@ EV-FDM DEMO
 $ gem install jekyll
 ```
 
+For gem to install jekyll, you need to install ruby dev packages.
+For exemple in Ubuntu:
+
+```
+$ apt-get install ruby1.9.1-dev
+```
+
 - Retrieve dependencies:
 
 ```
