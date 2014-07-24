@@ -1,0 +1,26 @@
+---
+layout: default
+title: Wysiwig
+is_index: true
+---
+{% raw %}
+<div class="lisette-body" ng-app="wysiwyg-demo">
+    <div class="container" ui-view ng-controller="demo">
+        <h2> Wysiwyg directive </h2>
+        <p>A TinyMCE implementation</p>
+        <br>
+        <h3>Demo</h3>
+        <div>
+            <form method="post">
+                <textarea ui-tinymce ng-model="demoText"></textarea>
+            </form>
+        </div>
+    </div>
+</div>
+{% endraw %}
+
+{% include script.html %}
+
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/tinymce/tinymce.min.js'></script>
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/angular-ui-tinymce/src/tinymce.js'></script>
+<script type='text/javascript' src='app/app.js'></script>

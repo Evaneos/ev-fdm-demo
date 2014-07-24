@@ -7,3 +7,7 @@ dist
 _site
 tmp
 *.pyc
+.idea
+bower_components/
+build/
+serve/

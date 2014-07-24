@@ -12,6 +12,7 @@
   ],
   "dependencies": {
     "ev-fdm": "git@github.com:Evaneos/ev-fdm.git",
-    "octicons": "*"
+    "octicons": "*",
+    "angular-ui-tinymce": "latest"
   }
 }
