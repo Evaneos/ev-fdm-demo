@@ -5,7 +5,7 @@ is_index: true
 ---
 {% raw %}
 <!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
-<div class="lisette-body" style="position: relative;">
+<div class="lisette-body" ng-app="component-demo" style="position: relative;">
     <div class="container" ui-view>
         <h1>Components - CSS</h1>
         <p>
@@ -325,9 +325,22 @@ is_index: true
                 </tr>
             </tbody>
         </table>
+
+        <h2> Date Picker </h2 ng-init="myDate = new Date()">
+        <p>
+            Exemple: <input ui-date ng-model="myDate">
+        </p>
+
+        <h2> Popover </h2>
+        <p>
+            Popover, very classic, à la boostrap. Just a re-styling of <a href="http://angular-ui.github.io/bootstrap/#/popover">angular ui boostrap</a>.
+        </p><p>
+            <button popover-placement="top" popover="I'm a popover!" popover-title='Hey!' class="btn btn-default" popover-append-to-body="true">Top</button>
+        </p>
     </div>
 </div>
 {% endraw %}
 
 
 {% include script.html %}
+<script type='text/javascript' src='app.js'></script>
