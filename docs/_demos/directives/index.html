@@ -1,0 +1,54 @@
+---
+layout: default
+title: Directives
+is_index: true
+---
+{% raw %}
+<div class="lisette-body"  ng-app="demo">
+    <div class="container" ui-view>
+        <h1>Directives demos</h1>
+
+        <h2>ev-full-height-body</h2>
+
+        <div style="width: 300px; height: 400px; background-color: grey; float: left; margin-right: 30px;">
+            <div style="height: 50px; line-height: 50px; text-align: center; background-color: chartreuse">
+                Without the directive
+            </div>
+            <div style="background-color:orange">
+                Lorem ipsum dolor sit amet
+            </div>
+        </div>
+
+        <div style="width: 300px; height: 400px; background-color: grey; float: right" ev-full-height-body>
+            <div style="height: 50px; line-height: 50px; text-align: center; background-color: chartreuse" class="ev-full-height-body-header">
+                With the directive
+            </div>
+            <div style="background-color: orange" class="ev-full-height-body">
+                Lorem ipsum dolor sit amet
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <h2>Tabs</h2>
+
+        <div style="background-color: grey">
+            <tabs>
+                <pane tab-title="Hello" tab-icon="icon-intro">
+                    Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .
+                </pane>
+                <pane tab-title="World" tab-icon="icon-daybyday">
+                    I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.
+                </pane>
+                <pane tab-title="!!" tab-icon="icon-money">
+                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !
+                </pane>
+            </tabs>
+        </div>
+    </div>
+</div>
+{% endraw %}
+
+
+{% include script.html %}
+<script type='text/javascript' src='app/app.js'></script>
