@@ -1,18 +1,21 @@
 ---
 layout: default
-title: Wysiwig
+title: TinyMCE
 is_index: true
 ---
 {% raw %}
 <div class="lisette-body" ng-app="wysiwyg-demo">
     <div class="container" ui-view ng-controller="demo">
-        <h2> Wysiwyg directive </h2>
+        <h2> TinyMCE directive </h2>
         <p>A TinyMCE implementation</p>
         <br>
+        <p>You can change TinyMCE options using <code>options</code> attribute</p>
+        <p>See <a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE 4.0 documentation</a> for more informations</p>
+        <br />
         <h3>Demo</h3>
         <div>
             <form method="post">
-                <textarea ui-tinymce ng-model="demoText"></textarea>
+                <ev-tinymce ng-model="demoText"></ev-tinymce>
             </form>
         </div>
     </div>
@@ -23,4 +26,5 @@ is_index: true
 
 <script type='text/javascript' src='{{ site.baseurl }}bower_components/tinymce/tinymce.min.js'></script>
 <script type='text/javascript' src='{{ site.baseurl }}bower_components/angular-ui-tinymce/src/tinymce.js'></script>
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/ev-fdm/dist/plugins/tinymce/ev-fdm-tinymce.min.js'></script>
 <script type='text/javascript' src='app/app.js'></script>
