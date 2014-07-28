@@ -1,0 +1,36 @@
+---
+layout: default
+title: Leaflet
+is_index: true
+app_stylesheet: leaflet.css
+---
+{% raw %}
+<div class="controller-demo" ng-app="demo">
+    <div class="container lisette-body" ui-view ng-init="coord={}">
+        <h2> Leaflet directive </h2>
+        <p>You can configure me with special icons</p>
+        <br>
+        <h3>Demo </h3>
+        <div>
+            <ev-leaflet coordinate="coord" editable="true" />
+        </div>
+        <br>
+        <code> coordinate: {{coord | json}} </code>
+    </div>
+
+    <div class="lisette-module-region right" style="display:block">
+    </div>
+</div>
+{% endraw %}
+{% include script.html %}
+
+
+<link type="text/css" rel="stylesheet" media="all" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/leaflet-dist/leaflet.js'></script>
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.min.js'></script>
+<script type='text/javascript' src='{{ site.baseurl }}bower_components/ev-fdm/dist/plugins/leaflet/ev-fdm-leaflet.js'></script>
+
+
+<script type='text/javascript' src='app/app.js'></script>
+<script type='text/javascript' src='app/controllers/DemoController.js'></script>
+<script type='text/javascript' src='app/controllers/PanelController.js'></script>

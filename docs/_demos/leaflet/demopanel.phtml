@@ -1,0 +1,20 @@
+<div class="panel-header">
+    <span class="panel-title">Leaflet inside a panel</span>
+    <button type="button"
+        class="close"
+        ng-click="$dismiss()">
+        &times;
+    </button>
+</div>
+
+<div class="panel-body">
+    <div class="section">
+        <h4>Non editable</h4>
+        <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="false" />
+    </div>
+    <hr />
+    <div class="section">
+        <h4>Editable</h4>
+        <ev-leaflet coordinate="{ latitude: 51.505, longitude: -0.09 }" editable="true" />
+    </div>
+</div>

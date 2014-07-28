@@ -1,0 +1,56 @@
+---
+layout: default
+title: Basics
+is_index: true
+---
+
+<div class="controller-demo" ng-app="demo">
+
+    <!-- NOTIFICATIONS AREA -->
+    <div class="lisette-module-notification"
+        ng-controller="NotificationsController"
+        ng-show="activeNotification"
+        ng-cloak>
+        <div class="inner"
+            ng-class="getClass(activeNotification)"
+            ng-bind="activeNotification.text"></div>
+        <button type="button"
+            class="close"
+            ng-click="remove(activeNotification)">×</button>
+    </div>
+
+    <!-- CENTER PANEL -->
+    <div class="lisette-body">
+        <div ev-module ng-cloak>
+
+            <ev-menu></ev-menu>
+
+            <div class="lisette-module-leftbar" ui-view="leftbar">
+                <div class="very-long">
+                    LEFT BAR
+                </div>
+            </div>
+
+            <div ui-view></div>
+
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="lisette-module-region right animate">
+    </div>
+
+</div>
+
+{% include script.html %}
+
+
+<script type='text/javascript' src='app/app.js'></script>
+<script type='text/javascript' src='app/controllers/GridController.js'></script>
+<script type='text/javascript' src='app/controllers/GridLeftController.js'></script>
+<script type='text/javascript' src='app/controllers/PanelController.js'></script>
+<script type='text/javascript' src='app/controllers/Tab1Controller.js'></script>
+<script type='text/javascript' src='app/controllers/Tab3Controller.js'></script>
+<script type='text/javascript' src='app/controllers/Tab3LeftController.js'></script>
+<script type='text/javascript' src='app/services/DemoContextService.js'></script>
+<script type='text/javascript' src='app/services/DemoDataFactory.js'></script>

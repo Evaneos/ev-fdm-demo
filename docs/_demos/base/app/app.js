@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('demo', [ 'ui.router', 'ev-fdm']);
+var app = angular.module('demo', ['ui.router', 'ev-fdm']);
 
 app.config(['$stateProvider', '$urlRouterProvider', 'menuManagerProvider', 'menuManagerProvider', function($stateProvider, $urlRouterProvider, menuManagerProvider) {
 
@@ -97,10 +97,12 @@ app.config(['$stateProvider', '$urlRouterProvider', 'menuManagerProvider', 'menu
         })
         .state('tab4', {
             url: '/tab4',
-            resolve: [ '$q', function($q) {
+            resolve: [ 'cfpLoadingBar', '$q', function(cfpLoadingBar, $q) {
                 var deferred = $q.defer();
+                cfpLoadingBar.start();
                 setTimeout(function() {
                     deferred.resolve(true);
+                    cfpLoadingBar.complete();
                 }, 3000);
                 return deferred.promise;
             }],
