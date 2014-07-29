@@ -1,25 +1,7 @@
 'use strict';
 
 
-// configure the loading bar to be displayed just beneath the menu
-commonModule.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-    cfpLoadingBarProvider.parentSelector = 'body';
-    cfpLoadingBarProvider.includeSpinner = false;
-}]);
-
-
-var app = angular.module('demo', [ 'ui.router', 'ev-fdm', 'ev-leaflet']);
-
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-      .state('index', {
-          url: '/',
-          templateUrl: 'index.phtml',
-          controller: 'DemoController'
-      });
-
-  $urlRouterProvider.otherwise("/");
-}]);
+var app = angular.module('demo', ['ev-fdm', 'ev-leaflet']);
 
 
 app.config(['evLeafletProvider', function(evLeafletProvider) {

@@ -10,12 +10,17 @@ app_stylesheet: leaflet.css
         <h2> Leaflet directive </h2>
         <p>You can configure me with special icons</p>
         <br>
+        <p ng-controller='ButtonController'>
+            <button ng-click="openPanel()" class='btn btn-default'>Open in a panel</button>
+        </p>
         <h3>Demo </h3>
         <div>
             <ev-leaflet coordinate="coord" editable="true" />
         </div>
         <br>
-        <code> coordinate: {{coord | json}} </code>
+        <p>
+            <code> coordinate: {{coord | json}} </code>
+        </p>
     </div>
 
     <div class="lisette-module-region right" style="display:block">
@@ -32,5 +37,5 @@ app_stylesheet: leaflet.css
 
 
 <script type='text/javascript' src='app/app.js'></script>
-<script type='text/javascript' src='app/controllers/DemoController.js'></script>
+<script type='text/javascript' src='app/controllers/ButtonController.js'></script>
 <script type='text/javascript' src='app/controllers/PanelController.js'></script>
