@@ -1,0 +1,21 @@
+---
+layout: default
+title: Filters
+is_index: true
+---
+{% raw %}
+<!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
+<div class="lisette-body" ng-app="demo">
+    <div class="container" ui-view>
+        <h2> Sum </h2>
+        <p>
+            Usage : <code ng-non-bindable> {{ [{ value: 5 }, { value: 4 }] | sum:'value' }} </code>
+            <br>
+            Result : <code>{{ [{ value: 5 }, { value: 4 }] | sum:'value' }}</code>
+        </p>
+    </div>
+</div>
+{% endraw %}
+
+{% include script.html %}
+<script type='text/javascript' src='app/app.js'></script>
