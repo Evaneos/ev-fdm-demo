@@ -2,6 +2,7 @@
 layout: default
 title: TinyMCE
 is_index: true
+app_stylesheet: default.css
 ---
 {% raw %}
 <div class="lisette-body" ng-app="wysiwyg-demo">
@@ -11,13 +12,12 @@ is_index: true
         <br>
         <p>You can change TinyMCE options using <code>options</code> attribute</p>
         <p>See <a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE 4.0 documentation</a> for more informations</p>
-        <br />
         <h3>Demo</h3>
         <div>
-            <form method="post">
-                <ev-tinymce ng-model="demoText"></ev-tinymce>
-            </form>
+            <ev-tinymce ng-model="demoText" placeholder="You can type me in !"></ev-tinymce>
         </div>
+        <pre> <code>{{demoText}}</code></pre>
+        <br />
     </div>
 </div>
 {% endraw %}

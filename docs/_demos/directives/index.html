@@ -10,21 +10,23 @@ is_index: true
 
         <h2>ev-full-height-body</h2>
 
-        <div style="width: 300px; height: 400px; background-color: grey; float: left; margin-right: 30px;">
-            <div style="height: 50px; line-height: 50px; text-align: center; background-color: chartreuse">
+        <div style="width: 300px; height: 400px; float: left; margin-right: 30px; overflow: auto">
+            <div style="height: 50px; line-height: 50px; text-align: center;">
                 Without the directive
             </div>
-            <div style="background-color:orange">
-                Lorem ipsum dolor sit amet
+            <div>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
         </div>
 
-        <div style="width: 300px; height: 400px; background-color: grey; float: right" ev-full-height-body>
-            <div style="height: 50px; line-height: 50px; text-align: center; background-color: chartreuse" class="ev-full-height-body-header">
+        <div style="width: 300px; height: 400px;float: right; overflow: auto" ev-fixed-header>
+            <div style="height: 50px; line-height: 50px; text-align: center;" class="ev-header">
                 With the directive
             </div>
-            <div style="background-color: orange" class="ev-full-height-body">
-                Lorem ipsum dolor sit amet
+            <div class="ev-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </div>
         </div>
 
@@ -33,17 +35,17 @@ is_index: true
         <h2>Tabs</h2>
 
         <div style="background-color: grey">
-            <tabs>
-                <pane tab-title="Hello" tab-icon="icon-intro">
-                    Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .Lorem ipsum dolor sit amet .
-                </pane>
-                <pane tab-title="World" tab-icon="icon-daybyday">
+            <ev-tab>
+                <ev-pane tab-title="Hello" tab-icon="icon-intro">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </ev-pane>
+                <ev-pane tab-title="World" tab-icon="icon-daybyday">
                     I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.I love cookies.
-                </pane>
-                <pane tab-title="!!" tab-icon="icon-money">
+                </ev-pane>
+                <ev-pane tab-title="!!" tab-icon="icon-money">
                     Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !                    Foo !Foo !Foo !Foo !Foo !Foo !
-                </pane>
-            </tabs>
+                </ev-pane>
+            </ev-tab>
         </div>
     </div>
 </div>
