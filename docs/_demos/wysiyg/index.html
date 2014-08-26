@@ -2,7 +2,7 @@
 layout: default
 title: TinyMCE
 is_index: true
-app_stylesheet: default.css
+app_stylesheet: wysiwyg.css
 ---
 {% raw %}
 <div class="lisette-body" ng-app="wysiwyg-demo">
@@ -14,7 +14,7 @@ app_stylesheet: default.css
         <p>See <a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank">TinyMCE 4.0 documentation</a> for more informations</p>
         <h3>Demo</h3>
         <div>
-            <ev-tinymce ng-model="demoText" placeholder="You can type me in !"></ev-tinymce>
+            <ev-tinymce ng-model="demoText" max-chars="50" placeholder="You can type me in !"></ev-tinymce>
         </div>
         <pre> <code>{{demoText}}</code></pre>
         <br />
