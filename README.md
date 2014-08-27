@@ -23,13 +23,13 @@ $ npm install
 $ bower install
 ```
 
-- Start grunt with default task and in watch mode:
+- Start gulp with default task and in watch mode:
 
 ```
-$ grunt default watch
+$ gulp
 ```
 
-- Start jekyll
+- Start jekyll (only necessary if not on docker)
 
 ```
 jekyll serve --watch
