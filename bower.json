@@ -11,7 +11,7 @@
     "tests"
   ],
   "dependencies": {
-    "ev-fdm": "git@github.com:Evaneos/ev-fdm.git#master",
+    "ev-fdm": "git@github.com:Evaneos/ev-fdm.git#b6699018c94c520c9e6b5db4f58c4028f1c9246b",
     "octicons": "*"
   }
 }
