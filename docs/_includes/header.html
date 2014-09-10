@@ -33,9 +33,9 @@
         <ul id="lisette-menu-items" class="nav navbar-nav" style="left: 100px; right: 200px;">
             {% for demo in site.demos | where:"is_index","true" %}
                 {% if demo.is_index %}
-                    <li class="menu-item module" style="width: 80px">
+                    <li class="menu-item module">
                         <a href="{{ demo.url }}">
-                            <span class="title" style="font-size: 10px">{{ demo.title }}</span>
+                            <span class="title">{{ demo.title }}</span>
                             <span class="caret"></span>
                         </a>
                     </li>
