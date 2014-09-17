@@ -47,6 +47,26 @@ is_index: true
                 </ev-pane>
             </ev-tab>
         </div>
+
+        <div class="clearfix"></div>
+
+        <h2>ev-tag-list</h2>
+
+        <div ng-controller='TagController'>
+            <h3>La faim !</h3>
+            <ev-tag-list
+                     elements='context.tags'
+                     editable='context.editMode'
+                     max-elements='9'
+                     class-name='list-tags'
+                     max-alert-message="Max tags reached!"></ev-tag-list>
+
+            <div ng-show="context.editMode">
+                <button class="btn btn-primary" ng-click="addPlate()">Add a plate</button> <input type="text" ng-model="newPlate.name" />
+            </div>
+            <br>
+            Edit tags: <input type="checkbox" ng-model="context.editMode" />
+        </div>
     </div>
 </div>
 {% endraw %}
