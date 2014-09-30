@@ -84,7 +84,7 @@ def installDependencies(directory, version):
     with cd('%s/versions/%s' % (env.directory, version)):
         run('npm install')
         run('bower install')
-        run('grunt')
+        run('gulp build')
 
 def check(branch):
     with settings(warn_only=False):
