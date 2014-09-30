@@ -30,10 +30,10 @@
             </li>
         </ul>
 
-        <ul id="lisette-menu-items" class="nav navbar-nav">
+        <ul id="lisette-menu-items" class="nav navbar-nav" style="left: 100px; right: 200px;">
             {% for demo in site.demos | where:"is_index","true" %}
                 {% if demo.is_index %}
-                    <li class="menu-item module ">
+                    <li class="menu-item module">
                         <a href="{{ demo.url }}">
                             <span class="title">{{ demo.title }}</span>
                             <span class="caret"></span>

@@ -29,7 +29,7 @@ function less(src, paths, dest) {
 
 
 var src = ['less/**/*.less'];
-var paths = ['less', bowerDirectory, bowerDirectory + '/ev-fdm/core/less' ];
+var paths = ['less', bowerDirectory + '/ev-fdm/core/less' ];
 gulp.task('less', function () {
     return less(src, paths, dest + '/css');
 });
@@ -66,7 +66,7 @@ gulp.task('jekyll build', function (done) {
 });
 
 gulp.task('watch-build', function () {
-    gulp.watch(['docs/**/*'], ['jekyll build']);
+    gulp.watch(['docs/**/*', '!docs/bower_components/**/*', 'docs/bower_components/ev-fdm/**/*'], ['jekyll build']);
 });
 
 
