@@ -10,12 +10,12 @@ env.keep_versions = 5
 env.forward_agent = 'True'
 
 # Repository
-env.repository    = 'git@github.com:Evaneos/ev-fdm-demo.git'
-env.project = 'evfdmdemo'
-env.slackChannel = '#logcode'
-env.hosts     = 'evaneos@192.168.1.230'
-env.directory = '/home/evaneos/projects/%s' % env.project
-env.siteUrl = 'http://%s.dev.evaneos.com' % env.project
+env.repository   = 'git@github.com:Evaneos/ev-fdm-demo.git'
+env.project      = 'evfdmdemo'
+env.slackChannel = '#ev-fdm'
+env.hosts        = 'evaneos@192.168.1.230'
+env.directory    = '/home/evaneos/projects/%s' % env.project
+env.siteUrl      = 'http://%s.dev.evaneos.com' % env.project
 
 
 @task
@@ -126,4 +126,4 @@ def release():
     run('ln -s %s/versions/%s/_site %s/production' % (env.directory, lastVersion, env.directory))
     if env.slackChannel:
         projectName = env.project.title()
-        run('curl -X POST --data-urlencode \'payload={"channel": "%s", "username": "%s bot", "text": "%s: New version deployed: %s", "icon_emoji": ":computer:"}\' https://evaneos.slack.com/services/hooks/incoming-webhook?token=4G16wMjFee3ghYq359bG4Lkm' % (env.slackChannel, projectName, env.siteUrl, lastVersion))
+        run('curl -X POST --data-urlencode \'payload={"channel": "%s", "username": "%s bot", "text": "%s: New version deployed: %s", "icon_emoji": ":dizzy_face:"}\' https://evaneos.slack.com/services/hooks/incoming-webhook?token=4G16wMjFee3ghYq359bG4Lkm' % (env.slackChannel, projectName, env.siteUrl, lastVersion))
