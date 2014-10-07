@@ -1,0 +1,13 @@
+// All the col-xx-nn will have border in the demo
+@iteration: 12;
+
+.demo-ev-size {
+    .loopCol (@index) when (@index > 0) {
+        .col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index} {
+            border: 1px solid red;
+            height: 40px;
+        }
+        .loopCol(@index - 1);
+    }
+    .loopCol (@iteration);
+}

@@ -4,14 +4,16 @@
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ site.description }}">
+
+
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="stylesheet" href="{{ site.baseurl }}bower_components/ev-fdm/dist/css/ev-fdm.min.css">
-    <link rel="stylesheet" href="{% if page.app_stylesheet %}{{ site.baseurl }}css/{{ page.app_stylesheet }}{% else %}{{ "css/demo.css" | prepend: site.baseurl }}{% endif %}">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/ev-fdm.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}css/main.css">
+
+
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <script>var _gaq = _gaq || [];</script>
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}bower_components/octicons/octicons/octicons.css">
 
     <style type="text/css">
     #lisette-menu .menu-item {
