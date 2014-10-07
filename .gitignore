@@ -1,5 +1,6 @@
 docs/bower_components
 docs/css
+docs/js
 docs/fonts
 docs/images
 node_modules
@@ -11,3 +12,4 @@ tmp
 bower_components/
 build/
 serve/
+.tags
