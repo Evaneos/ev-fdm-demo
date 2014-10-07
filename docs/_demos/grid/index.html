@@ -1,0 +1,75 @@
+---
+layout: default
+title: Grid
+is_index: true
+---
+{% raw %}
+<!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
+<div ng-app="demo" class="container">
+    <h1> Grid system <small> for responsive panels </small> </h1>
+    <p> Contrary to the vast majority of responsive grid system developped, ev-grid is not based on the media screen query. Instead, the column collapse based its container size. This allow for much more dynamic comportement (for instance, some part of the page being collapsed while other are not).
+    </p>
+
+    <p>
+        The possibilities are the same as the <a href="http://getbootstrap.com/css/#grid-options">bootstrap grid</a>.
+    </p>
+    <h2> Example: Stacked to horizontal </h2>
+    <p> Using a single set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out stacked in extra small to small container before becoming horizontal on medium+ container. Place grid columns in any <code>.row</code>.
+    </p>
+
+    <div grid-demo>
+        <div class="row">
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+            <div class="col-md-1">.col-md-1</div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">.col-md-8</div>
+            <div class="col-md-4">.col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+        </div>
+    </div>
+    <h2> Example: Small and Medium container </h2>
+    <div grid-demo>
+        <!-- Stack the columns in xs containers by making one full-width and the other half-width -->
+        <div class="row">
+            <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+            <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        </div>
+
+        <!-- Columns start at 50% wide on xs container and bump up to 33.3% wide on md one -->
+        <div class="row">
+            <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+            <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+            <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        </div>
+
+        <!-- Columns are always 50% wide-->
+        <div class="row">
+            <div class="col-xs-6">.col-xs-6</div>
+            <div class="col-xs-6">.col-xs-6</div>
+        </div>
+    </div>
+</div>
+
+{% endraw %}
+
+{% include script.html %}
+<script type='text/javascript' src='app/app.js'></script>
