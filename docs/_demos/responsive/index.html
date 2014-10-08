@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Grid
+title: Responsive
 is_index: true
 ---
 {% raw %}
@@ -207,8 +207,24 @@ is_index: true
         </div>
     </div>
 
-	<h2> Responsive Viewport directive </h2>
-    <div></div>
+    <h2>Responsive Viewport directive </h2>
+    <p> </p>
+    <h4> Change the width to <input type=number ng-model="width"></input></h4>
+    <div resizable responsive-viewport class="grid-demo resizable container">
+        <p> The associated viewport class is <code>{{viewport}}</code></p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+            <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+            <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+            <!-- Optional: clear the XS cols if their content doesn't match in height -->
+            <div class="clearfix visible-xs"></div>
+            <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        </div>
+    </div>
+
     {% endraw %}
 
     {% include script.html %}

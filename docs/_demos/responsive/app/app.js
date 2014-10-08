@@ -1,8 +1,8 @@
 // global angular
 (function (angular) {
 'use strict';
-var app = angular.module('demo', ['ev-fdm'])
-	.directive('gridDemo', function () {
+angular.module('demo', ['ev-fdm'])
+	.directive('responsiveDemo', function () {
 		return {
 			template:
 				"<div>" +
@@ -20,15 +20,27 @@ var app = angular.module('demo', ['ev-fdm'])
 				"			ng-click=\"containerSize='lg'\" "+
 				"			ng-class=\"{ active: containerSize === 'lg' }\"> lg </button>" +
 				"	</p>" +
-				"	<div class=\"well demo-ev-size\" ng-class=\"'ev-size-' + containerSize\" ng-transclude></div>" +
+				"	<div class=\"well demo-ev-size\" ng-class=\"'ev-viewport-' + containerSize\" ng-transclude></div>" +
 				"{{containerSize}}" +
 				"</div>",
 			transclude: true,
 			scope: true,
 			link: function linkGridDemo(scope, elem, attrs) {
 				scope.containerSize = (attrs.containerSize) ? attrs.containerSize : "md";
-				console.log(scope.containerSize);
 			}
+		};
+	})
+
+	.directive('resizable', function() {
+		return function($scope, $element, $attrs) {
+			$scope.width = $element.width();
+			$scope.$watch('width', function (newWidth) {
+				$element.width(newWidth);
+				$scope.$emit('module-layout-changed');
+				$scope.viewport = $element.attr('class').split(" ").filter(function(_class) {
+					return _class.indexOf('ev-viewport') === 0;
+				})[0];
+			});
 		};
 	});
 })(angular);

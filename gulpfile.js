@@ -82,5 +82,5 @@ gulp.task('watch-concat', function () {
 });
 
 gulp.task('build', ['less', 'copy', 'concat']);
-gulp.task('watch', ['watch-copy', 'watch-less', 'watch-concat']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('watch', ['build', 'watch-copy', 'watch-less', 'watch-concat']);
+gulp.task('default', ['build']);
