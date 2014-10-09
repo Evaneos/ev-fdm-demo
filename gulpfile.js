@@ -45,7 +45,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('watch-less', function () {
-    gulp.watch(src, ['less']);
+    gulp.watch(['less/**/*.less'], ['less']);
 });
 
 
