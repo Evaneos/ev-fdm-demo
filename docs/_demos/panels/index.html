@@ -4,16 +4,11 @@ title: Panels
 is_index: true
 ---
 {% raw %}
-<!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
 <div ng-app="demo" >
-    <h1>This is a demo of panels.</h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <ev-panels>
-    </ev-panels>
-    <script type="text/ng-template" id="responsive-panel-1.html">
+    <h1>Introducing panels <small> the heart and soul of ev-fdm</small></h1>
+    <h2> A basic use case </h2>
+    <ev-panels id="responsive-example"> </ev-panels>
+    <script type="text/ng-template" id="responsive-panel.html">
         <h3> I'm a panel </h3> 
         <div class="grid-demo" ev-responsive-viewport>
             <div class="row">
@@ -28,6 +23,14 @@ is_index: true
                 <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
             </div>
         </div>
+    </script>
+    
+    <h2> Stacked panels </h2>
+    <ev-panels id="stacked-example"> </ev-panels>
+    <script type="text/ng-template" id="stacked-panel.html">
+        <h3> Gray wolf <em> Canis lupus lupus </em></h3> 
+        <h3 class="ev-stacked-section"> Gray wolf </h3> 
+        <p> The gray wolf (Canis lupus), also known as the timber wolf, true wolf or western wolf is a canid native to the wilderness and remote areas of North America, Eurasia, and North Africa. It is the largest extant member of its family, with males averaging 43–45 kg (95–99 lb), and females 36–38.5 kg (79–85 lb). Like the red wolf, it is distinguished from other Canis species by its larger size and less pointed features, particularly on the ears and muzzle. Its winter fur is long and bushy, and predominantly a mottled gray in color, although nearly pure white, red, or brown to black also occur. </p> 
     </script>
     {% endraw %}
 

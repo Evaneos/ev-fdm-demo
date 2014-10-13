@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var concat = require('gulp-concat');
+var watch = require('gulp-watch');
 var dest = 'docs';
 var bowerDirectory = './bower_components';
 
@@ -63,7 +64,14 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(dest + '/css/'));
 });
 gulp.task('watch-copy', function () {
-    gulp.watch( [bowerDirectory + '/ev-fdm/dist/**/*'], ['copy']);
+    watch( bowerDirectory + '/ev-fdm/dist/**/*', function(stream, done) {
+        // wait for all the watch to trigger
+        setTimeout(function() {
+            gulp.start('copy');
+            done();
+        }, 500);
+
+    });
 });
 
 
