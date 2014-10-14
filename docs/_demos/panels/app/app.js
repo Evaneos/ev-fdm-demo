@@ -27,5 +27,11 @@ angular.module('demo', ['ev-fdm'])
             name: 'stacked-panel-3',
             templateUrl: 'stacked-panel.html',
         }, 'stacked-example');
+    })
+    .controller('introController', function (PanelService, $scope) {
+        PanelService.open({
+            name: 'intro-panel-1',
+            templateUrl: 'intro-panel-1.html',
+        });
     });
 })(angular);

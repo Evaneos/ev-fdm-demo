@@ -6,10 +6,19 @@ is_index: true
 {% raw %}
 <div ng-app="demo" >
     <h1>Introducing panels <small> the heart and soul of ev-fdm</small></h1>
-    <h2> A basic use case </h2>
+    Panels (aka ev-panels) are a special type of viewport in ev-fdm. 
+    <section ng-controller="introController">
+        <h2> Normal panels </h2>
+        <ev-panels> </ev-panels>
+        <script type="text/ng-template" id="intro-panel-1.html">
+            <h3> I'm a panel </h3> 
+            <p> Basically, it's just a viewport that can be close and opened. <em> TODO Explain how to create a panel </em></p>
+        </script>
+    </section>
+    <h2> Responsive example </h2>
     <ev-panels id="responsive-example"> </ev-panels>
     <script type="text/ng-template" id="responsive-panel.html">
-        <h3> I'm a panel </h3> 
+        <h3> I'm a panel </h3>
         <div class="grid-demo" ev-responsive-viewport>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
