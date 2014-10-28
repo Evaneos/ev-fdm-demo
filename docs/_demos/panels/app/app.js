@@ -28,10 +28,23 @@ angular.module('demo', ['ev-fdm'])
             templateUrl: 'stacked-panel.html',
         }, 'stacked-example');
     })
+
+    .run(function (PanelService) {
+        PanelService.open({
+            name: 'fixed-header-panel-1',
+            templateUrl: 'fixed-header-panel.html',
+        }, 'fixed-header-example');        
+        PanelService.open({
+            name: 'fixed-header-panel-2',
+            templateUrl: 'fixed-header-panel.html',
+        }, 'fixed-header-example');
+    })
+
     .controller('introController', function (PanelService, $scope) {
         PanelService.open({
             name: 'intro-panel-1',
             templateUrl: 'intro-panel-1.html',
         });
     });
+
 })(angular);

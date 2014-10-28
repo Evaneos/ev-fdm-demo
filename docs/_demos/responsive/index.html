@@ -208,10 +208,9 @@ is_index: true
     </div>
 
     <h2>Responsive Viewport directive </h2>
-    <p> </p>
-    <h4> Change the width to <input type=number ng-model="width"></input></h4>
+    <p>This directive is responsible for putting the proper <code> ev-viewport-*size* </code> class on a container depanding on its size. For performance reason it doesn't watch the width of the element. So each time a resize happens, the event <code>module-layout-changed</code> must be triggered in order for the class to update if the size has changed. </p>
+    <p> The default upper limits are are <code><300px</code> very small, <code><450px</code> small, <code><700px</code> medium and <code>>=700px</code> large. They can be overriden.
     <div resizable ev-responsive-viewport class="grid-demo resizable container">
-        <p> The associated viewport class is <code>{{viewport}}</code></p>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
             <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
@@ -224,7 +223,29 @@ is_index: true
             <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
         </div>
     </div>
-
+    <h2>Limit classes </h2>
+    <p> It is possible to specify a max size and min size for viewport well, with the classes <code>ev-min-*size*</code> and <code>ev-max-*size</code>. For instance, if you want a viewport that don't go below <code>md</code> size, you can add <code>ev-min-md</code><p>
+    <p>Below is a div with the class <code>ev-min-sm</code> et <code>ev-max-md</code></p>
+    <div resizable ev-responsive-viewport class="ev-min-sm ev-max-md responsive-utility-demo resizable">
+        <div class="row responsive-utilities-test hidden-on">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <span class="hidden-xs">Extra small</span>
+                <span class="visible-xs">✔ Hidden on x-small</span>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <span class="hidden-sm">Small</span>
+                <span class="visible-sm">✔ Hidden on small</span>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <span class="hidden-md">Medium</span>
+                <span class="visible-md">✔ Hidden on medium</span>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <span class="hidden-lg">Large</span>
+                <span class="visible-lg">✔ Hidden on large</span>
+            </div>
+        </div>
+    </div>
     {% endraw %}
 
     {% include script.html %}
