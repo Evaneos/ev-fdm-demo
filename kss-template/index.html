@@ -1,0 +1,92 @@
+---
+layout: default
+title: CSS
+is_index: {{#if overview}}true{{else}}false{{/if}}
+---
+{% raw %}
+<div class="clearfix demo-container">
+    <header>
+        <hgroup><h1>CSS Styleguide</h1></hgroup>
+    </header>
+    <aside>
+        <nav><ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+            {{#eachRoot}}
+                <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a>
+                <!-- Uncomment this to add second-level navigation.
+                <ul>
+                {{#eachSection reference}}
+                  {{#ifDepth 2}}
+                    <li><a href="section-{{../../reference}}.html#{{reference}}">{{reference}}: {{header}}</a>
+                  {{/ifDepth}}
+                {{/eachSection}}
+                </ul>
+            -->
+                </li>
+            {{/eachRoot}}
+        </ul></nav>
+    </aside>
+    <div role="main">
+        <article>
+            {{#if overview}}
+            {{{overview}}}
+            {{else}}
+
+            {{!
+            Find each section, in order.
+            If there's no markup or modifiers supplied, use a Markdown-only
+            layout instead.
+
+            The "root" element comes first in this loop, and can be detected using
+            the "#ifDepth 1" block as seen below.
+            }}
+            {{#eachSection rootNumber}}
+            {{#unlessDepth 1}}
+                <section>
+            {{/unlessDepth}}
+
+                    <h{{ refDepth }}><strong>{{ reference }}{{#ifDepth 1}}.0{{/ifDepth}}</strong> - {{ header }}</h1>
+
+                    {{#if description}}
+                        {{{description}}}
+                    {{/if}}
+
+                    {{#if markup}}
+                    <ul class="ev-list clearfix col-xs-12">
+                        <li>
+                            <div>
+                                {{modifierMarkup}}
+                            </div>
+                        </li>
+                        {{#eachModifier}}
+                        <li>
+                            <div>
+                                <small><strong>{{{name}}}</strong></small>
+                                <span class="text-light">{{description}}</span>
+                            </div>
+                            <div>
+                                {{modifierMarkup}}
+                            </div>
+                        </li>
+                        {{/eachModifier}}
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">{{markup}}</pre>
+                    </div>
+                    {{/if}}
+
+            {{#unlessDepth 1}}
+                </section>
+            {{/unlessDepth}}
+            {{/eachSection}}
+        {{/if}}
+        </article>
+    </div>
+</div>
+
+
+
+
+{% endraw %}
+
+{% include script.html %}
