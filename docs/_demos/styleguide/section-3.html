@@ -1,0 +1,291 @@
+---
+layout: default
+title: CSS
+is_index: false
+---
+{% raw %}
+<div class="clearfix container" ng-app="app" ev-responsive-viewport>
+    <header>
+        <hgroup><h1>CSS Styleguide</h1></hgroup>
+    </header>
+    <aside>
+        <nav><ul>
+            <li><a href="index.html">0.0: Overview</a></li>
+                <li><a href="section-1.html">1.0: Buttons</a>
+                <!-- Uncomment this to add second-level navigation.
+                <ul>
+                    <li><a href="section-1.html#1.1">1.1: Base style &amp; state</a>
+                    <li><a href="section-1.html#1.2">1.2: Skins</a>
+                </ul>
+            -->
+                </li>
+                <li><a href="section-2.html">2.0: Lists</a>
+                <!-- Uncomment this to add second-level navigation.
+                <ul>
+                    <li><a href="section-2.html#2.1">2.1: Unstyled list</a>
+                    <li><a href="section-2.html#2.2">2.2: Standard list</a>
+                    <li><a href="section-2.html#2.3">2.3: Item styling</a>
+                </ul>
+            -->
+                </li>
+                <li><a href="section-3.html">3.0: Helper classes</a>
+                <!-- Uncomment this to add second-level navigation.
+                <ul>
+                    <li><a href="section-3.html#3.1">3.1: Gray colors classes</a>
+                    <li><a href="section-3.html#3.2">3.2: Palette color classes</a>
+                </ul>
+            -->
+                </li>
+        </ul></nav>
+    </aside>
+    <div role="main">
+        <article>
+
+
+                    <h1><span class="text-dark">3.0</span> Helper classes</h1>
+
+
+
+                <section>
+
+                    <h2><span class="text-dark">3.1</span> Gray colors classes</h1>
+
+                        <p>Gray colors are neutral color used when the support should not convey any specific informations.
+They can be used ad background color or text colors</p>
+
+
+
+                </section>
+                <section>
+
+                    <h3><span class="text-dark">3.1.1</span> Gray background colors</h1>
+
+                        <p>A scale of gray background colors</p>
+
+
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <strong>.bg-gray</strong>
+                            <span class="text-light"> <p>Add a gray background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-gray"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-light</strong>
+                            <span class="text-light"> <p>Add a light background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-light"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-lighter</strong>
+                            <span class="text-light"> <p>Add a lighter background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-lighter"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-dark</strong>
+                            <span class="text-light"> <p>Add a dark background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-dark"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-darker</strong>
+                            <span class="text-light"> <p>Add a darker background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-darker"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;div style=&quot;height:100px; width: 100px&quot; class=&quot;{$modifiers}&quot;&gt;&lt;/div&gt;</pre>
+                    </div>
+
+                </section>
+                <section>
+
+                    <h3><span class="text-dark">3.1.2</span> Gray text colors</h1>
+
+                        <p>A scale of gray text colors</p>
+
+
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <strong>.text-gray</strong>
+                            <span class="text-light"> <p>Color the text in a gray</p>
+</span>
+                            <div>
+                                <p class="text-gray">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-light</strong>
+                            <span class="text-light"> <p>Color the text in a light gray</p>
+</span>
+                            <div>
+                                <p class="text-light">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-lighter</strong>
+                            <span class="text-light"> <p>Color the text in a lighter gray</p>
+</span>
+                            <div>
+                                <p class="text-lighter">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-dark</strong>
+                            <span class="text-light"> <p>Color the text in a dark gray</p>
+</span>
+                            <div>
+                                <p class="text-dark">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-darker</strong>
+                            <span class="text-light"> <p>Color the text in a darker gray</p>
+</span>
+                            <div>
+                                <p class="text-darker">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;p class=&quot;{$modifiers}&quot;&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.&lt;/p&gt;</pre>
+                    </div>
+
+                </section>
+                <section>
+
+                    <h2><span class="text-dark">3.2</span> Palette color classes</h1>
+
+                        <p>These colors are defined in the brand palette. They are used when a specific meaning is associated with the element</p>
+
+
+
+                </section>
+                <section>
+
+                    <h3><span class="text-dark">3.2.1</span> Background colors</h1>
+
+                        <p>A scale of palette background colors</p>
+
+
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <strong>.bg-danger</strong>
+                            <span class="text-light"> <p>Add a red background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-danger"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-info</strong>
+                            <span class="text-light"> <p>Add a blue background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-info"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-warning</strong>
+                            <span class="text-light"> <p>Add a orange background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-warning"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-primary</strong>
+                            <span class="text-light"> <p>Add a primary background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-primary"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.bg-success</strong>
+                            <span class="text-light"> <p>Add a green background</p>
+</span>
+                            <div>
+                                <div style="height:100px; width: 100px" class="bg-success"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;div style=&quot;height:100px; width: 100px&quot; class=&quot;{$modifiers}&quot;&gt;&lt;/div&gt;</pre>
+                    </div>
+
+                </section>
+                <section>
+
+                    <h3><span class="text-dark">3.2.2</span> Text colors</h1>
+
+                        <p>A scale of palette text colors</p>
+
+
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <strong>.text-danger</strong>
+                            <span class="text-light"> <p>Add a red background</p>
+</span>
+                            <div>
+                                <p class="text-danger">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-info</strong>
+                            <span class="text-light"> <p>Add a blue background</p>
+</span>
+                            <div>
+                                <p class="text-info">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-warning</strong>
+                            <span class="text-light"> <p>Add a orange background</p>
+</span>
+                            <div>
+                                <p class="text-warning">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-primary</strong>
+                            <span class="text-light"> <p>Add a primary background</p>
+</span>
+                            <div>
+                                <p class="text-primary">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.text-success</strong>
+                            <span class="text-light"> <p>Add a green background</p>
+</span>
+                            <div>
+                                <p class="text-success">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;p class=&quot;{$modifiers}&quot;&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.&lt;/p&gt;</pre>
+                    </div>
+
+                </section>
+        </article>
+    </div>
+</div>
+
+{% endraw %}
+
+{% include script.html %}
+<script type='text/javascript' src='public/app.js'></script>

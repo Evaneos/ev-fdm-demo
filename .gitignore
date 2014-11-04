@@ -3,6 +3,7 @@ docs/css
 docs/js
 docs/fonts
 docs/images
+docs/_demos/styleguide
 node_modules
 dist
 _site

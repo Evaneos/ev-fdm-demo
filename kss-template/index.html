@@ -4,7 +4,7 @@ title: CSS
 is_index: {{#if overview}}true{{else}}false{{/if}}
 ---
 {% raw %}
-<div class="clearfix demo-container">
+<div class="clearfix container" ng-app="app" ev-responsive-viewport>
     <header>
         <hgroup><h1>CSS Styleguide</h1></hgroup>
     </header>
@@ -45,25 +45,25 @@ is_index: {{#if overview}}true{{else}}false{{/if}}
                 <section>
             {{/unlessDepth}}
 
-                    <h{{ refDepth }}><strong>{{ reference }}{{#ifDepth 1}}.0{{/ifDepth}}</strong> - {{ header }}</h1>
+                    <h{{ refDepth }}><span class="text-dark">{{ reference }}{{#ifDepth 1}}.0{{/ifDepth}}</span> {{ header }}</h1>
 
                     {{#if description}}
                         {{{description}}}
                     {{/if}}
 
                     {{#if markup}}
-                    <ul class="ev-list clearfix col-xs-12">
+                    <ul class="ev-list container-fluid">
+                        {{#unless modifiers}}
                         <li>
                             <div>
                                 {{modifierMarkup}}
                             </div>
                         </li>
+                        {{/unless}}
                         {{#eachModifier}}
                         <li>
-                            <div>
-                                <small><strong>{{{name}}}</strong></small>
-                                <span class="text-light">{{description}}</span>
-                            </div>
+                            <strong>{{{name}}}</strong>
+                            <span class="text-light"> {{{description}}}</span>
                             <div>
                                 {{modifierMarkup}}
                             </div>
@@ -84,9 +84,7 @@ is_index: {{#if overview}}true{{else}}false{{/if}}
     </div>
 </div>
 
-
-
-
 {% endraw %}
 
 {% include script.html %}
+<script type='text/javascript' src='public/app.js'></script>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CSS
-is_index: true
+is_index: false
 ---
 {% raw %}
 <div class="clearfix container" ng-app="app" ev-responsive-viewport>
@@ -14,8 +14,6 @@ is_index: true
                 <li><a href="section-1.html">1.0: Buttons</a>
                 <!-- Uncomment this to add second-level navigation.
                 <ul>
-                    <li><a href="section-1.html#1.1">1.1: Base style &amp; state</a>
-                    <li><a href="section-1.html#1.2">1.2: Skins</a>
                 </ul>
             -->
                 </li>
@@ -28,24 +26,43 @@ is_index: true
                 </ul>
             -->
                 </li>
-                <li><a href="section-3.html">3.0: Helper classes</a>
-                <!-- Uncomment this to add second-level navigation.
-                <ul>
-                    <li><a href="section-3.html#3.1">3.1: Gray colors classes</a>
-                    <li><a href="section-3.html#3.2">3.2: Palette color classes</a>
-                </ul>
-            -->
-                </li>
         </ul></nav>
     </aside>
     <div role="main">
         <article>
-             
+
+                <section>
+
+                    <h2><strong>0.1</strong> - Gray background colors</h1>
+
+                        <p>A scale of gray background colors</p>
+<p>.bg-darker-gray
+.bg-dark-gray
+.bg-gray
+.bg-light-gray
+.bg-lighter-gray</p>
+
+
+                    <ul class="ev-list clearfix col-xs-12">
+                        <li>
+                            <div>
+                                <div style="height:100px; width: 100px" class="{$modifiers}"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;div style=&quot;height:100px; width: 100px&quot; class=&quot;{$modifiers}&quot;&gt;&lt;/div&gt;</pre>
+                    </div>
+
+                </section>
         </article>
     </div>
 </div>
+<script type='text/javascript' src='public/app.js'></script>
+
+
+
 
 {% endraw %}
 
 {% include script.html %}
-<script type='text/javascript' src='public/app.js'></script>
