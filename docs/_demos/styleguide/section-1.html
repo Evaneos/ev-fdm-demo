@@ -15,7 +15,8 @@ is_index: false
                 <!-- Uncomment this to add second-level navigation.
                 <ul>
                     <li><a href="section-1.html#1.1">1.1: Base style &amp; state</a>
-                    <li><a href="section-1.html#1.2">1.2: Skins</a>
+                    <li><a href="section-1.html#1.2">1.2: Colors</a>
+                    <li><a href="section-1.html#1.3">1.3: Size</a>
                 </ul>
             -->
                 </li>
@@ -31,7 +32,7 @@ is_index: false
                 <li><a href="section-3.html">3.0: Helper classes</a>
                 <!-- Uncomment this to add second-level navigation.
                 <ul>
-                    <li><a href="section-3.html#3.1">3.1: Gray colors classes</a>
+                    <li><a href="section-3.html#3.1">3.1: Neutral colors classes</a>
                     <li><a href="section-3.html#3.2">3.2: Palette color classes</a>
                 </ul>
             -->
@@ -46,8 +47,38 @@ is_index: false
 
                         <p>A basic UI component triggering an action. Button styles can be applied to anything with the <code>.btn</code> class applied.
 However, typically you&#39;ll want to apply these to only <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements for the best rendering.</p>
+<p>There is three types of buttons:</p>
 
 
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <strong>.btn-primary</strong>
+                            <span class="text-light"> <p>Primary button, used to emphasize the main call to action (usually one per viewport).</p>
+</span>
+                            <div>
+                                <button class="btn btn-primary">Button</button>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.btn-secondary</strong>
+                            <span class="text-light"> <p>Secondary button, normal buttons (default value, this class is optional)</p>
+</span>
+                            <div>
+                                <button class="btn btn-secondary">Button</button>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.btn-thirdary</strong>
+                            <span class="text-light"> <p>Thirdary button, light button, used generally inline, when you don&#39;t want to overload the interface.</p>
+</span>
+                            <div>
+                                <button class="btn btn-thirdary">Button</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;button class=&quot;btn {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
+                    </div>
 
                 <section>
 
@@ -61,7 +92,8 @@ However, typically you&#39;ll want to apply these to only <code>&lt;a&gt;</code>
 </span>
                             <div>
                                 <button class="btn btn-primary default">Button</button>
-<button class="btn default">Button</button>
+<button class="btn btn-secondary default">Button</button>
+<button class="btn btn-thirdary default">Button</button>
                             </div>
                         </li>
                         <li>
@@ -70,7 +102,8 @@ However, typically you&#39;ll want to apply these to only <code>&lt;a&gt;</code>
 </span>
                             <div>
                                 <button class="btn btn-primary pseudo-class-hover">Button</button>
-<button class="btn pseudo-class-hover">Button</button>
+<button class="btn btn-secondary pseudo-class-hover">Button</button>
+<button class="btn btn-thirdary pseudo-class-hover">Button</button>
                             </div>
                         </li>
                         <li>
@@ -79,7 +112,8 @@ However, typically you&#39;ll want to apply these to only <code>&lt;a&gt;</code>
 </span>
                             <div>
                                 <button class="btn btn-primary pseudo-class-active">Button</button>
-<button class="btn pseudo-class-active">Button</button>
+<button class="btn btn-secondary pseudo-class-active">Button</button>
+<button class="btn btn-thirdary pseudo-class-active">Button</button>
                             </div>
                         </li>
                         <li>
@@ -88,75 +122,128 @@ However, typically you&#39;ll want to apply these to only <code>&lt;a&gt;</code>
 </span>
                             <div>
                                 <button class="btn btn-primary disabled">Button</button>
-<button class="btn disabled">Button</button>
+<button class="btn btn-secondary disabled">Button</button>
+<button class="btn btn-thirdary disabled">Button</button>
                             </div>
                         </li>
                     </ul>
                     <div class="clearfix">
                         <pre class="prettyprint lang-html">&lt;button class=&quot;btn btn-primary {$modifiers}&quot;&gt;Button&lt;/button&gt;
-&lt;button class=&quot;btn {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
+&lt;button class=&quot;btn btn-secondary {$modifiers}&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn btn-thirdary {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
                     </div>
 
                 </section>
                 <section>
 
-                    <h2><span class="text-dark">1.2</span> Skins</h1>
+                    <h2><span class="text-dark">1.2</span> Colors</h1>
 
-                        <p>You can change the color of the button by adding any of these classes</p>
+                        <p>You can change the color of the button by adding any of these classes. You can customize the list of colored button
+you need by changing the list of colors in the <code>buttons/variable.less</code> file.</p>
 
 
                     <ul class="ev-list container-fluid">
                         <li>
-                            <strong>.btn-default</strong>
-                            <span class="text-light"> <p>A neutral button</p>
+                            <strong>.btn-soil</strong>
+                            <span class="text-light"> <p>A button color soil (default value, this class is optional)</p>
 </span>
                             <div>
-                                <button class="btn btn-default">Button</button>
+                                <button class="btn btn-primary btn-soil">Button</button>
+<button class="btn btn-secondary btn-soil">Button</button>
+<button class="btn btn-thirdary btn-soil">Button</button>
                             </div>
                         </li>
                         <li>
-                            <strong>.btn-danger</strong>
-                            <span class="text-light"> <p>A red button, generally used for emphasing dangerous action (with no come back possible)</p>
+                            <strong>.btn-orange</strong>
+                            <span class="text-light"> <p>A button color orange</p>
 </span>
                             <div>
-                                <button class="btn btn-danger">Button</button>
+                                <button class="btn btn-primary btn-orange">Button</button>
+<button class="btn btn-secondary btn-orange">Button</button>
+<button class="btn btn-thirdary btn-orange">Button</button>
                             </div>
                         </li>
                         <li>
-                            <strong>.btn-primary</strong>
-                            <span class="text-light"> <p>A button from the primary color, generally used as a call to action.</p>
+                            <strong>.btn-pool</strong>
+                            <span class="text-light"> <p>A button color pool</p>
 </span>
                             <div>
-                                <button class="btn btn-primary">Button</button>
+                                <button class="btn btn-primary btn-pool">Button</button>
+<button class="btn btn-secondary btn-pool">Button</button>
+<button class="btn btn-thirdary btn-pool">Button</button>
                             </div>
                         </li>
                         <li>
-                            <strong>.btn-info</strong>
-                            <span class="text-light"> <p>A blue button, for quiet actions</p>
+                            <strong>.btn-lime</strong>
+                            <span class="text-light"> <p>A button color lime</p>
 </span>
                             <div>
-                                <button class="btn btn-info">Button</button>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>.btn-success</strong>
-                            <span class="text-light"> <p>A green button, usually used for confirmation actions</p>
-</span>
-                            <div>
-                                <button class="btn btn-success">Button</button>
-                            </div>
-                        </li>
-                        <li>
-                            <strong>.btn-warning</strong>
-                            <span class="text-light"> <p>A orange button, can be used for emphazing the consequences of the action.</p>
-</span>
-                            <div>
-                                <button class="btn btn-warning">Button</button>
+                                <button class="btn btn-primary btn-lime">Button</button>
+<button class="btn btn-secondary btn-lime">Button</button>
+<button class="btn btn-thirdary btn-lime">Button</button>
                             </div>
                         </li>
                     </ul>
                     <div class="clearfix">
-                        <pre class="prettyprint lang-html">&lt;button class=&quot;btn {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
+                        <pre class="prettyprint lang-html">&lt;button class=&quot;btn btn-primary {$modifiers}&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary {$modifiers}&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn btn-thirdary {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
+                    </div>
+
+                </section>
+                <section>
+
+                    <h2><span class="text-dark">1.3</span> Size</h1>
+
+                        <p>You can change the size of any button by adding these class.</p>
+
+
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <strong>.btn-xs</strong>
+                            <span class="text-light"> <p>An extra small button</p>
+</span>
+                            <div>
+                                <button class="btn btn-primary btn-xs">Button</button>
+<button class="btn btn-secondary btn-xs">Button</button>
+<button class="btn btn-thirdary btn-xs">Button</button>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.btn-sm</strong>
+                            <span class="text-light"> <p>A small button</p>
+</span>
+                            <div>
+                                <button class="btn btn-primary btn-sm">Button</button>
+<button class="btn btn-secondary btn-sm">Button</button>
+<button class="btn btn-thirdary btn-sm">Button</button>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.btn-md</strong>
+                            <span class="text-light"> <p>A medium button (default value, this class is optional)</p>
+</span>
+                            <div>
+                                <button class="btn btn-primary btn-md">Button</button>
+<button class="btn btn-secondary btn-md">Button</button>
+<button class="btn btn-thirdary btn-md">Button</button>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>.btn-lg</strong>
+                            <span class="text-light"> <p>A large button</p>
+</span>
+                            <div>
+                                <button class="btn btn-primary btn-lg">Button</button>
+<button class="btn btn-secondary btn-lg">Button</button>
+<button class="btn btn-thirdary btn-lg">Button</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;button class=&quot;btn btn-primary {$modifiers}&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary {$modifiers}&quot;&gt;Button&lt;/button&gt;
+&lt;button class=&quot;btn btn-thirdary {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
                     </div>
 
                 </section>
