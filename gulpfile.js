@@ -96,14 +96,18 @@ gulp.task('watch-concat', function () {
 // KSS STYLEGUIDE GENERATION
 // //////////////////////////////////////////////////
 gulp.task('kss', function (cb) {
-    exec('./node_modules/kss/bin/kss-node '+ bowerDirectory + '/ev-fdm/core/less/ docs/_demos/styleguide/' + 
+    exec('./node_modules/kss/bin/kss-node '+ bowerDirectory + '/ev-fdm/core/less/ docs/_demos/styleguide/' +
         ' -t kss-template/', function (err, stdout, stderr) {
         console.log(stderr);
         cb(err);
     });
 });
 
+gulp.task('watch-kss', function () {
+    gulp.watch( [bowerDirectory + '/ev-fdm/core/less/**/*.less'], ['kss']);
+});
+
 
 gulp.task('build', ['less', 'copy', 'concat', 'kss']);
-gulp.task('watch', ['build', 'watch-copy', 'watch-less', 'watch-concat']);
+gulp.task('watch', ['build', 'watch-copy', 'watch-less', 'watch-concat', 'watch-kss']);
 gulp.task('default', ['build']);
