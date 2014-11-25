@@ -8,6 +8,7 @@ var watch = require('gulp-watch');
 var exec = require('child_process').exec;
 var dest = 'docs';
 var bowerDirectory = './bower_components';
+var nodeModuleDirectory = './node_modules';
 
 var bowerDependancies = [
     'jquery/jquery.js',
@@ -63,6 +64,8 @@ gulp.task('copy', function() {
         .pipe(gulp.dest(dest + '/images/'));
     gulp.src([bowerDirectory + '/ev-fdm/dist/css/**/*'])
         .pipe(gulp.dest(dest + '/css/'));
+    gulp.src([nodeModuleDirectory + '/kss/lib/template/public/kss.js'])
+        .pipe(gulp.dest(dest + '/js/'));
 });
 gulp.task('watch-copy', function () {
     watch( bowerDirectory + '/ev-fdm/dist/**/*', function(stream, done) {
