@@ -5,29 +5,26 @@ angular.module('demo')
         $scope.password = "";
 
         $scope.submitted = 0;
+        $scope.emailPattern = /[^\s@]+@[^\s@]+\.[^\s@]+/
 
         $scope.formHasError = function(form) {
             angular.forEach(form, function(propVal, prop) {
                 if (!prop || prop.indexOf('$') == 0) {
                     return;
                 }
-                propVal.evBlurred = true;
+                propVal.evValidable = true;
                 $scope.hasError(propVal);
             })
         }
 
         $scope.hasError = function(input) {
-            input.evHasError = !!(!input.$valid && input.evBlurred);
+            input.evHasError = !!(!input.$valid && input.evValidable);
         }
 
-        $scope.setBlur = function(input) {
-            input.evBlurred = true;
+        $scope.setValidable = function(input) {
+            input.evValidable = true;
 
             $scope.hasError(input);
-        }
-
-        $scope.inError = function(input) {
-            return !input.$valid && input.$dirty && input.evBlurred
         }
 
         $scope.submit = function() {

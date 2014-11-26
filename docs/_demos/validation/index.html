@@ -8,20 +8,29 @@ is_index: true
     <div class="container" style="padding-top: 50px">
         <form ng-controller="MainController as main" name="myForm" novalidate  ng-submit="submit()">
 
+            <h3>Form validation</h3>
+
+            <p>Submit is canceled when form is not valid. Form validations occurs on:</p>
+            <ul>
+                <li>keydown after the field has been blurred one time</li>
+                <li>form submit (either submit button or pressing enter key).</li>
+            </ul>
+
             <p>Source : <a href="https://github.com/Evaneos/ev-fdm-demo/tree/validation/docs/_demos/validation">ev-fdm-demo/tree/validation/docs/_demos/validation</a></p>
 
 
             <div style="width: 50%; float: right;" >
                 <div class="form-group" ng-class="{ 'has-error': myForm.login.evHasError }">
-                    <label for="login">Login</label>
+                    <label for="login">Login (required, min 3 chars, validable on blur)</label>
                     <input type="text"
                             class="form-control"
+                            autocomplete="off"
                             ng-model="user.login"
                             ng-required="true"
                             ng-minlength="3"
                             name="login"
-                            ng-blur="setBlur(myForm.login)"
-                            ng-change="hasError(myForm.login)"
+                            ng-blur="setValidable(myForm.login)"
+                            ng-keyup="hasError(myForm.login)"
                             >
                     <ul class="errors text-danger">
                         <li ng-if="myForm.login.evHasError && myForm.login.$error.required">Login is required</li>
@@ -29,20 +38,38 @@ is_index: true
                     </ul>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error': myForm.name.evHasError }">
-                    <label for="name">Name</label>
-                    <input type="text"
+                <div class="form-group" ng-class="{ 'has-error': myForm.password.evHasError }">
+                    <label for="name">Password (required, min 6 chars, validable on keyup)</label>
+                    <input type="password"
                             class="form-control"
-                            ng-model="user.name"
+                            autocomplete="off"
+                            ng-model="user.password"
                             ng-required="true"
-                            name="name"
-                            ng-blur="setBlur(myForm.name)"
-                            ng-change="hasError(myForm.name)"
-                            ng-minlength="3"
+                            name="password"
+                            ng-keyup="setValidable(myForm.password); hasError(myForm.password)"
+                            ng-minlength="6"
                             >
                     <ul class="errors text-danger">
-                        <li ng-if="myForm.name.evHasError && myForm.name.$error.required">Name is required</li>
-                        <li ng-if="myForm.name.evHasError && myForm.name.$error.minlength">Name length must be greater than 3 characters</li>
+                        <li ng-if="myForm.password.evHasError && myForm.password.$error.required">Password is required</li>
+                        <li ng-if="myForm.password.evHasError && myForm.password.$error.minlength">Password length must be greater than 6 characters</li>
+                    </ul>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': myForm.email.evHasError }">
+                    <label for="email">Email (required, email pattern, validable on blur)</label>
+                    <input type="email"
+                            class="form-control"
+                            autocomplete="off"
+                            ng-model="user.email"
+                            ng-required="true"
+                            name="email"
+                            ng-blur="setValidable(myForm.email)"
+                            ng-keyup="hasError(myForm.email)"
+                            ng-pattern="emailPattern"
+                            >
+                    <ul class="errors text-danger">
+                        <li ng-if="myForm.email.evHasError && myForm.email.$error.required">Email is required</li>
+                        <li ng-if="myForm.email.evHasError && myForm.email.$error.pattern">Email is invalid</li>
                     </ul>
                 </div>
 
@@ -60,14 +87,6 @@ is_index: true
             </style>
 
             <div>
-                <h3>Form validation</h3>
-
-                <p>Submit is canceled when form is not valid. Form validations occurs on:</p>
-                <ul>
-                    <li>keydown after the field has been blurred one time</li>
-                    <li>form submit (either submit button or pressing enter key).</li>
-                </ul>
-
                 <h3>Debug</h3>
                 <ul>
                     <li ng-class="{ 'text-info': submitted }">
@@ -81,13 +100,14 @@ is_index: true
                         Email  : {{ user.login }}
 
                         <ul>
-                            <li>Dirty: {{ myForm.login.evBlurred }}</li>
                             <li>RAW errors: {{ myForm.login.$error }}</li>
+                            <li>Touched: {{ myForm.login.evTouched }}</li>
+                            <li>evHasError: {{ myForm.login.evHasError }}</li>
                             <li>Required:
                                 <span class="text-info" ng-hide="myForm.login.$error.required">valid</span>
                                 <span class="text-danger" ng-show="myForm.login.$error.required">in error</span>
                             </li>
-                            <li>Min length 3:
+                            <li>Min length:
                                 <span class="text-info" ng-hide="myForm.login.$error.minlength">valid</span>
                                 <span class="text-danger" ng-show="myForm.login.$error.minlength">in error</span>
                             </li>
@@ -95,13 +115,37 @@ is_index: true
                     </li>
 
                     <li>
-                        Name  : {{ user.name }}
+                        Password  : {{ user.password }}
 
                         <ul>
-                            <li>RAW errors: {{ myForm.name.$error }}</li>
+                            <li>RAW errors: {{ myForm.password.$error }}</li>
+                            <li>Touched: {{ myForm.password.evTouched }}</li>
+                            <li>evHasError: {{ myForm.password.evHasError }}</li>
                             <li>Required:
-                                <span class="text-info" ng-hide="myForm.name.$error.required">valid</span>
-                                <span class="text-danger" ng-show="myForm.name.$error.required">in error</span>
+                                <span class="text-info" ng-hide="myForm.password.$error.required">valid</span>
+                                <span class="text-danger" ng-show="myForm.password.$error.required">in error</span>
+                            </li>
+                            <li>Min length:
+                                <span class="text-info" ng-hide="myForm.password.$error.minlength">valid</span>
+                                <span class="text-danger" ng-show="myForm.password.$error.minlength">in error</span>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Email  : {{ user.email }}
+
+                        <ul>
+                            <li>RAW errors: {{ myForm.email.$error }}</li>
+                            <li>Touched: {{ myForm.email.evTouched }}</li>
+                            <li>evHasError: {{ myForm.email.evHasError }}</li>
+                            <li>Required:
+                                <span class="text-info" ng-hide="myForm.email.$error.required">valid</span>
+                                <span class="text-danger" ng-show="myForm.email.$error.required">in error</span>
+                            </li>
+                            <li>Format:
+                                <span class="text-info" ng-hide="myForm.email.$error.pattern">valid</span>
+                                <span class="text-danger" ng-show="myForm.email.$error.pattern">invalid</span>
                             </li>
                         </ul>
                     </li>
