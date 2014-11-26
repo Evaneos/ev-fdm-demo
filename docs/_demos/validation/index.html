@@ -4,17 +4,11 @@ title: Validation
 is_index: true
 ---
 {% raw %}
-<div class="lisette-body"  ng-app="demo">
-    <div class="container">
+<div ng-app="demo">
+    <div class="container" style="padding-top: 50px">
         <form ng-controller="MainController as main" name="myForm" novalidate  ng-submit="submit()">
 
-            <h2> Form validation</h2>
-
-            <p>Submit is canceled when form is not valid. Form validations occurs on:</p>
-            <ul>
-                <li>keydown after the field has been blurred one time</li>
-                <li>form submit (either submit button or pressing enter key).</li>
-            </ul>
+            <p>Source : <a href="https://github.com/Evaneos/ev-fdm-demo/tree/validation/docs/_demos/validation">ev-fdm-demo/tree/validation/docs/_demos/validation</a></p>
 
 
             <div style="width: 50%; float: right;" >
@@ -29,25 +23,52 @@ is_index: true
                             ng-blur="setBlur(myForm.login)"
                             ng-change="hasError(myForm.login)"
                             >
-                  </div>
+                    <ul class="errors text-danger">
+                        <li ng-if="myForm.login.evHasError && myForm.login.$error.required">Login is required</li>
+                        <li ng-if="myForm.login.evHasError && myForm.login.$error.minlength">Login length must be greater than 3 characters</li>
+                    </ul>
+                </div>
 
-                  <div class="form-group" ng-class="{ 'has-error': myForm.name.evHasError }">
-                      <label for="name">Name</label>
-                      <input type="text"
-                              class="form-control"
-                              ng-model="user.name"
-                              ng-required="true"
-                              name="name"
-                              ng-blur="setBlur(myForm.name)"
-                              ng-change="hasError(myForm.name)"
-                              ng-minlength="3"
-                              >
-                    </div>
+                <div class="form-group" ng-class="{ 'has-error': myForm.name.evHasError }">
+                    <label for="name">Name</label>
+                    <input type="text"
+                            class="form-control"
+                            ng-model="user.name"
+                            ng-required="true"
+                            name="name"
+                            ng-blur="setBlur(myForm.name)"
+                            ng-change="hasError(myForm.name)"
+                            ng-minlength="3"
+                            >
+                    <ul class="errors text-danger">
+                        <li ng-if="myForm.name.evHasError && myForm.name.$error.required">Name is required</li>
+                        <li ng-if="myForm.name.evHasError && myForm.name.$error.minlength">Name length must be greater than 3 characters</li>
+                    </ul>
+                </div>
 
-                  <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Submit</button>
             </div>
 
+
+            <style type="text/css">
+                .errors {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0 10px;
+                    font-style: italic;
+                }
+            </style>
+
             <div>
+                <h3>Form validation</h3>
+
+                <p>Submit is canceled when form is not valid. Form validations occurs on:</p>
+                <ul>
+                    <li>keydown after the field has been blurred one time</li>
+                    <li>form submit (either submit button or pressing enter key).</li>
+                </ul>
+
+                <h3>Debug</h3>
                 <ul>
                     <li ng-class="{ 'text-info': submitted }">
                         Form submitted: {{ submitted }}
@@ -85,7 +106,6 @@ is_index: true
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </form>
     </div>
