@@ -19,6 +19,7 @@ is_index: false
                     <li><a href="section-1.html#1.3">1.3: Colors</a>
                     <li><a href="section-1.html#1.4">1.4: Type</a>
                     <li><a href="section-1.html#1.5">1.5: Size</a>
+                    <li><a href="section-1.html#1.6">1.6: Icons</a>
                 </ul>
             -->
                 </li>
@@ -273,11 +274,44 @@ you need by changing the list of colors in the <code>buttons/variable.less</code
 <button class="btn btn-thirdary btn-lg">Button</button>
                             </div>
                         </li>
+                        <li>
+                            <strong>.btn-block</strong>
+                            <span class="text-light"> <p>A block button having the full width of his parent</p>
+</span>
+                            <div>
+                                <button class="btn btn-primary btn-block">Button</button>
+<button class="btn btn-secondary btn-block">Button</button>
+<button class="btn btn-thirdary btn-block">Button</button>
+                            </div>
+                        </li>
                     </ul>
                     <div class="clearfix">
                         <pre class="prettyprint lang-html">&lt;button class=&quot;btn btn-primary {$modifiers}&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;btn btn-secondary {$modifiers}&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;btn btn-thirdary {$modifiers}&quot;&gt;Button&lt;/button&gt;</pre>
+                    </div>
+
+                </section>
+                <section>
+
+                    <h2><span class="text-dark">1.6</span> Icons</h1>
+
+                        <p>Of course, buttons can also contains icons to reinforce the button action</p>
+
+
+                    <ul class="ev-list container-fluid">
+                        <li>
+                            <div>
+                                <button class="btn btn-primary"><span class="icon icon-create"></span>Add a line</button>
+<button class="btn btn-secondary"><span class="icon icon-tick"></span>Accept</button>
+<button class="btn btn-thirdary"><span class="icon icon-bin"></span>Delete</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix">
+                        <pre class="prettyprint lang-html">&lt;button class=&quot;btn btn-primary&quot;&gt;&lt;span class=&quot;icon icon-create&quot;&gt;&lt;/span&gt;Add a line&lt;/button&gt;
+&lt;button class=&quot;btn btn-secondary&quot;&gt;&lt;span class=&quot;icon icon-tick&quot;&gt;&lt;/span&gt;Accept&lt;/button&gt;
+&lt;button class=&quot;btn btn-thirdary&quot;&gt;&lt;span class=&quot;icon icon-bin&quot;&gt;&lt;/span&gt;Delete&lt;/button&gt;</pre>
                     </div>
 
                 </section>
