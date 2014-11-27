@@ -1,5 +1,3 @@
-'use strict';
-
 var module = angular.module('ev-fdm')
 .directive('evErrors', function () {
     return {

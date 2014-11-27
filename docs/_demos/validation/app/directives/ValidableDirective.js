@@ -1,5 +1,3 @@
-'use strict';
-
 var module = angular.module('ev-fdm')
 /**
  * DONE: makeValidable only happens after first blur or when ev-validable event occurs.
