@@ -74,19 +74,6 @@ is_index: true
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
 
-
-            <style type="text/css">
-                .errors {
-                    list-style: none;
-                    margin: 0;
-                    padding: 0 10px;
-                    font-style: italic;
-                }
-
-
-            </style>
-
-
             {% endraw %}
             {% include validation_debug.html %}
             {% raw %}
@@ -97,10 +84,5 @@ is_index: true
 
 
 {% include script.html %}
-<script type='text/javascript' src='app/directives/FormGroupDirective.js'></script>
-<script type='text/javascript' src='app/directives/SubmitDirective.js'></script>
-<script type='text/javascript' src='app/directives/ValidableDirective.js'></script>
-<script type='text/javascript' src='app/directives/ErrorMessageDirective.js'></script>
-<script type='text/javascript' src='app/directives/ErrorsDirective.js'></script>
 <script type='text/javascript' src='app/app.js'></script>
 <script type='text/javascript' src='app/controllers/MainController.js'></script>
