@@ -1,7 +1,7 @@
 'use strict';
 
 var module = angular.module('ev-fdm')
-.directive('evSubmit', ['$parse', '$rootScope', function($parse, $rootScope) {
+.directive('evSubmit', ['$parse', function($parse) {
     return {
         restrict: 'A',
         require: 'form',
