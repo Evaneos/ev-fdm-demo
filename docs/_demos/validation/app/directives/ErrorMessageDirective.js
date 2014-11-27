@@ -4,11 +4,9 @@ var module = angular.module('ev-fdm')
         restrict: 'E',
         transclude: true,
         scope: {
-            input: '='
+            input: '=',
+            error: '@'
         },
         template: '<li ng-if="input[\'evHasError\'] && input.$error[error]" ng-transclude></li>',
-        link: function(scope, elements, attrs) {
-            scope.error = attrs.error;
-        }
     };
 });
