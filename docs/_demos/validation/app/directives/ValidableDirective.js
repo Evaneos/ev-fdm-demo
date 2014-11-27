@@ -13,6 +13,13 @@ var module = angular.module('ev-fdm')
         link: function(scope, element, attrs, model) {
             var hasError = function() {
                 model.evHasError = !!(!model.$valid && model.evValidable);
+
+                if (model.evHasError) {
+                    scope.$emit('ev-validate-invalid');
+                }
+                else {
+                    scope.$emit('ev-validate-valid');
+                }
             };
 
             var makeValidable = function() {

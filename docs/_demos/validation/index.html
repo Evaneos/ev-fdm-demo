@@ -20,7 +20,7 @@ is_index: true
 
 
             <div style="width: 50%; float: right;" >
-                <div class="form-group" ng-class="{ 'has-error': myForm.login.evHasError }">
+                <div class="form-group">
                     <label for="login">Login (required, min 3 chars, validable on blur)</label>
                     <input type="text"
                             class="form-control"
@@ -37,7 +37,7 @@ is_index: true
                     </ev-errors>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error': myForm.password.evHasError }">
+                <div class="form-group">
                     <label for="name">Password (required, min 6 chars, validable on keyup)</label>
                     <input type="password"
                             class="form-control"
@@ -54,7 +54,7 @@ is_index: true
                     </ev-errors>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error': myForm.email.evHasError }">
+                <div class="form-group">
                     <label for="email">Email (required, email pattern, validable on blur)</label>
                     <input type="email"
                             class="form-control"
@@ -156,6 +156,7 @@ is_index: true
 
 
 {% include script.html %}
+<script type='text/javascript' src='app/directives/FormGroupDirective.js'></script>
 <script type='text/javascript' src='app/directives/SubmitDirective.js'></script>
 <script type='text/javascript' src='app/directives/ValidableDirective.js'></script>
 <script type='text/javascript' src='app/directives/ErrorMessageDirective.js'></script>
