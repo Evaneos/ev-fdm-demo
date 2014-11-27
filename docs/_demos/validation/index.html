@@ -6,7 +6,7 @@ is_index: true
 {% raw %}
 <div ng-app="demo">
     <div class="container" style="padding-top: 50px">
-        <form ng-controller="MainController as main" name="myForm" novalidate  ng-submit="submit()">
+        <form ng-controller="MainController as main" name="myForm" novalidate ev-submit="submit()">
 
             <h3>Form validation</h3>
 
@@ -29,13 +29,12 @@ is_index: true
                             ng-required="true"
                             ng-minlength="3"
                             name="login"
-                            ng-blur="setValidable(myForm.login)"
-                            ng-keyup="hasError(myForm.login)"
+                            ev-validable
                             >
-                    <ul class="errors text-danger">
-                        <li ng-if="myForm.login.evHasError && myForm.login.$error.required">Login is required</li>
-                        <li ng-if="myForm.login.evHasError && myForm.login.$error.minlength">Login length must be greater than 3 characters</li>
-                    </ul>
+                    <ev-errors>
+                        <ev-error-message input="myForm.login" error="required">Login is required</ev-error-message>
+                        <ev-error-message input="myForm.login" error="minlength">Login length must be greater than 3 characters</ev-error-message>
+                    </ev-errors>
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-error': myForm.password.evHasError }">
@@ -46,13 +45,13 @@ is_index: true
                             ng-model="user.password"
                             ng-required="true"
                             name="password"
-                            ng-keyup="setValidable(myForm.password); hasError(myForm.password)"
+                            ev-validable
                             ng-minlength="6"
                             >
-                    <ul class="errors text-danger">
-                        <li ng-if="myForm.password.evHasError && myForm.password.$error.required">Password is required</li>
-                        <li ng-if="myForm.password.evHasError && myForm.password.$error.minlength">Password length must be greater than 6 characters</li>
-                    </ul>
+                    <ev-errors>
+                        <ev-error-message input="myForm.password" error="required">Password is required</ev-error-message>
+                        <ev-error-message input="myForm.password" error="minlength">Password length must be greater than 6 characters</ev-error-message>
+                    </ev-errors>
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-error': myForm.email.evHasError }">
@@ -63,14 +62,13 @@ is_index: true
                             ng-model="user.email"
                             ng-required="true"
                             name="email"
-                            ng-blur="setValidable(myForm.email)"
-                            ng-keyup="hasError(myForm.email)"
+                            ev-validable
                             ng-pattern="emailPattern"
                             >
-                    <ul class="errors text-danger">
-                        <li ng-if="myForm.email.evHasError && myForm.email.$error.required">Email is required</li>
-                        <li ng-if="myForm.email.evHasError && myForm.email.$error.pattern">Email is invalid</li>
-                    </ul>
+                    <ev-errors>
+                        <ev-error-message input="myForm.email" error="required">Email is required</ev-error-message>
+                        <ev-error-message input="myForm.email" error="pattern">Email is invalid</ev-error-message>
+                    </ev-errors>
                 </div>
 
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -97,11 +95,11 @@ is_index: true
                         <span ng-class="{ 'text-info': myForm.$valid, 'text-danger': !myForm.$valid }">{{ myForm.$valid }}</span>
                     </li>
                     <li>
-                        Email  : {{ user.login }}
+                        Login  : {{ user.login }}
 
                         <ul>
                             <li>RAW errors: {{ myForm.login.$error }}</li>
-                            <li>Touched: {{ myForm.login.evTouched }}</li>
+                            <li>Validable: {{ myForm.login.evValidable }}</li>
                             <li>evHasError: {{ myForm.login.evHasError }}</li>
                             <li>Required:
                                 <span class="text-info" ng-hide="myForm.login.$error.required">valid</span>
@@ -119,7 +117,7 @@ is_index: true
 
                         <ul>
                             <li>RAW errors: {{ myForm.password.$error }}</li>
-                            <li>Touched: {{ myForm.password.evTouched }}</li>
+                            <li>evValidable: {{ myForm.password.evValidable }}</li>
                             <li>evHasError: {{ myForm.password.evHasError }}</li>
                             <li>Required:
                                 <span class="text-info" ng-hide="myForm.password.$error.required">valid</span>
@@ -137,7 +135,7 @@ is_index: true
 
                         <ul>
                             <li>RAW errors: {{ myForm.email.$error }}</li>
-                            <li>Touched: {{ myForm.email.evTouched }}</li>
+                            <li>evValidable: {{ myForm.email.evValidable }}</li>
                             <li>evHasError: {{ myForm.email.evHasError }}</li>
                             <li>Required:
                                 <span class="text-info" ng-hide="myForm.email.$error.required">valid</span>
@@ -158,5 +156,9 @@ is_index: true
 
 
 {% include script.html %}
+<script type='text/javascript' src='app/directives/SubmitDirective.js'></script>
+<script type='text/javascript' src='app/directives/ValidableDirective.js'></script>
+<script type='text/javascript' src='app/directives/ErrorMessageDirective.js'></script>
+<script type='text/javascript' src='app/directives/ErrorsDirective.js'></script>
 <script type='text/javascript' src='app/app.js'></script>
 <script type='text/javascript' src='app/controllers/MainController.js'></script>
