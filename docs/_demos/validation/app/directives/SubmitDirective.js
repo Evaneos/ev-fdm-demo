@@ -3,21 +3,31 @@ var module = angular.module('ev-fdm')
     return {
         restrict: 'A',
         require: 'form',
-        link: function(scope, element, attrs, form) {
-            var eventName = 'submit',
-                fn = $parse(attrs['evSubmit'], /* interceptorFn */ null, /* expensiveChecks */ true);
+        controller: function($scope, $element, $attrs) {
+            var validables = [];
 
-            element.on(eventName, function(event) {
+            this.$addValidable = function(makeValidable) {
+                validables.push(makeValidable)
+            };
+
+            var fn = $parse($attrs['evSubmit'], /* interceptorFn */ null, /* expensiveChecks */ true);
+
+            $element.on('submit', function(event) {
                 var callback = function() {
-                    if (form.$valid) {
-                        fn(scope, {$event:event});
+                    if ($scope.form.$valid) {
+                        fn($scope, {$event:event});
                     }
                 };
 
-                scope.$broadcast('ev-validable');
+                validables.forEach(function(makeValidable) {
+                  makeValidable();
+                });
 
-                scope.$apply(callback);
+                $scope.$apply(callback);
             });
+        },
+        link: function(scope, element, attrs, form) {
+            scope.form = form;
         }
     };
 }]);

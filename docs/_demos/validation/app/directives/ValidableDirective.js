@@ -7,35 +7,34 @@ var module = angular.module('ev-fdm')
 .directive('evValidable', function () {
     return {
         restrict: 'A',
-        require: 'ngModel',
-        link: function(scope, element, attrs, model) {
-            var hasError = function() {
-                model.evHasError = !!(!model.$valid && model.evValidable);
-
-                if (model.evHasError) {
-                    scope.$emit('ev-validate-invalid');
-                }
-                else {
-                    scope.$emit('ev-validate-valid');
-                }
-            };
+        require: ['ngModel', '^evSubmit', '^?evFormGroup'],
+        link: function(scope, element, attrs, controllers) {
+            var model = controllers[0],
+                evSubmit = controllers[1],
+                evFormGroup = controllers[2];
 
             var makeValidable = function() {
                 model.evValidable = true;
                 hasError();
             };
 
+            var hasError = function() {
+                model.evHasError = !!(!model.$valid && model.evValidable);
+
+                if (evFormGroup) {
+                    evFormGroup.toggleError(model.evHasError);
+                }
+            };
+
+            evSubmit.$addValidable(makeValidable);
+
             element.on('blur', function() {
                 scope.$apply(makeValidable);
             });
 
             element.on('keyup', function() {
-                scope.$apply(function() {
-                    hasError();
-                });
+                scope.$apply(hasError);
             });
-
-            scope.$on('ev-validable', makeValidable);
         }
     };
 });

@@ -1,18 +1,13 @@
 var module = angular.module('ev-fdm')
-.directive('formGroup', ['$parse', '$rootScope', function($parse, $rootScope) {
+.directive('evFormGroup', ['$parse', '$rootScope', function($parse, $rootScope) {
     return {
-        restrict: 'C',
+        restrict: 'EA',
         scope: true,
-        link: function(scope, element, attrs, form) {
-            scope.$on('ev-validate-invalid', function(e) {
-                element.addClass('has-error');
-                e.stopPropagation();
-            });
-
-            scope.$on('ev-validate-valid', function(e) {
-                element.removeClass('has-error');
-                e.stopPropagation();
-            });
+        transclude: true,
+        replace: true,
+        template: '<div class="form-group" ng-transclude></div>',
+        controller: function($scope, $element, $attrs) {
+            this.toggleError = $element.toggleClass.bind($element, 'has-error');
         }
     };
 }]);

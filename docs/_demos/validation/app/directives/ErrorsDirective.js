@@ -3,7 +3,7 @@ var module = angular.module('ev-fdm')
     return {
         restrict: 'E',
         transclude: true,
-        replace: 'true',
+        replace: true,
         template: '<ul class="errors text-danger" ng-transclude></ul>'
     };
 });
