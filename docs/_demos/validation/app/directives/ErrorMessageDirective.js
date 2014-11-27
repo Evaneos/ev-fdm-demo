@@ -8,7 +8,7 @@ var module = angular.module('ev-fdm')
         scope: {
             input: '='
         },
-        template: '<li ng-if="input[\'evHasError\'] && input.$error[error]"><div ng-transclude></div></li>',
+        template: '<li ng-if="input[\'evHasError\'] && input.$error[error]" ng-transclude></li>',
         link: function(scope, elements, attrs) {
             scope.error = attrs.error;
         }
