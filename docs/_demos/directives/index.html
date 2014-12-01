@@ -3,9 +3,10 @@ layout: default
 title: Directives
 is_index: true
 ---
-{% raw %}
-<!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
 <div ng-app="directive-demo">
+    {% include ev-templates.html %}
+    {% raw %}
+    <!-- Double curly braces won't be interpreted by liquid parser as we are in raw mode -->
     <div class="container" ui-view>
         <h1> Directives </h1>
         <h2> SelectLanguage directive </h2>
@@ -16,14 +17,29 @@ is_index: true
         <br>
         <h3>Demo </h3>
         <div>
-            <ev-select-language lang="currentLanguage">
+            <ev-select-language lang="currentLanguage"></ev-select-language>
         </div>
         <br>
         <code>currentLanguage: {{currentLanguage | json}} </code>
+
+        <h2>ev-edit-section</h2>
+
+        <div ng-controller="EditSectionController">
+            <ev-edit-section title="Edit Section Title" options="nameSection" success-message="Save success" error-message="Save failed">
+                <div ng-hide="edit">
+                    Name: {{ person.name }}
+                </div>
+                <div ng-show="edit">
+                    <input type="text" ng-model="person.name" required>
+                    <br>
+                    Save fail: <input type="checkbox" ng-model="person.saveFail">
+                </div>
+            </ev-edit-section>
+        </div>
     </div>
+    {% endraw %}
 </div>
-{% endraw %}
 
 
 {% include script.html %}
-<script type='text/javascript' src='app/app.js'></script>
+<script type="text/javascript" src="app/app.js"></script>

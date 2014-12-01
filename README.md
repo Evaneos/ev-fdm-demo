@@ -19,14 +19,13 @@ $ apt-get install ruby1.9.1-dev
 - Retrieve dependencies:
 
 ```
-$ npm install
-$ bower install
+$ make install
 ```
 
 - Start gulp with default task and in watch mode:
 
 ```
-$ gulp
+$ make watch
 ```
 
 - Start jekyll (only necessary if not on docker)

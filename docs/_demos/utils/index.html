@@ -88,18 +88,18 @@ is_index: true
     <p> This class enable the <a title="CSS-tricks article" href="http://css-tricks.com/fluid-width-equal-height-columns/"> fluid width equal height column layout </a>. When the class is attributed to a container, all of its direct child will have the same height, and align in column layout.
     </p>
     <h3> Example: Three column layout </h3>
-        <div class="example"> 
+        <div class="example">
             <h4 class="container-fluid"> European hedgehog </h4>
             <div class="ev-flex-columns three-columns-example">
-                <div class="col-xs-4">The European hedgehog (Erinaceus europaeus: Linnaeus, 1758), or common hedgehog is a hedgehog species found in western Europe, from the Iberian Peninsula and Italy northwards into Scandinavia.It is a generally common and widely distributed species that can survive across a wide range of habitat types. </div> 
-                <div class="col-xs-4">E. europaeus has a generalised body structure with unspecialised limb girdles. The animal appears brownish with most of its body covered by up to 6,000 brown and white spines. </div> 
-                <div class="col-xs-4">This species is largely nocturnal. It has a hesitant gait, frequently stopping to smell the air. Unlike the smaller, warmer-climate species, the European hedgehog may hibernate in the winter. However, most wake at least once to move their nests.</div> 
+                <div class="col-xs-4">The European hedgehog (Erinaceus europaeus: Linnaeus, 1758), or common hedgehog is a hedgehog species found in western Europe, from the Iberian Peninsula and Italy northwards into Scandinavia.It is a generally common and widely distributed species that can survive across a wide range of habitat types. </div>
+                <div class="col-xs-4">E. europaeus has a generalised body structure with unspecialised limb girdles. The animal appears brownish with most of its body covered by up to 6,000 brown and white spines. </div>
+                <div class="col-xs-4">This species is largely nocturnal. It has a hesitant gait, frequently stopping to smell the air. Unlike the smaller, warmer-climate species, the European hedgehog may hibernate in the winter. However, most wake at least once to move their nests.</div>
             </div>
         </div>
     <h3> Example: Three column with fixed headers </h3>
         <p> You can change the height, and watch the magic happens </p>
         <input type="number" ng-init="height=300" ng-model="height">
-        <div class="example"> 
+        <div class="example">
             <div class="ev-fixed-header" ng-style="{'max-height': height}">
                 <h4 class="ev-header col-xs-12"> Squirrel </h4>
                 <div class="ev-body ev-flex-columns three-columns-example">
@@ -128,7 +128,7 @@ is_index: true
     <h3> Vertical alignement </h3>
         <p> You can specify the vertical alignement very easily by adding a class to the container. For top alignement, it's <code>.ev-align-start </code>, for bottom, <code>.ev-align-end</code>. And centering vertically is very easy: <code>.ev-align-center</code>
         </p>
-        <p > <strong>Select the alignement:</strong> 
+        <p > <strong>Select the alignement:</strong>
             <br>
             <input ng-model="alignement" value="start" type="radio" name="alignement"> <code>ev-align-start</code> </input>
             <input ng-model="alignement" value="center" type="radio" name="alignement"> <code>ev-align-center</code> </input>
@@ -137,13 +137,38 @@ is_index: true
         <div class="example">
             <h4 class="container-fluid">Pony </h4>
             <div class="ev-flex-columns three-columns-example" ng-class="'ev-align-' + alignement">
-                <div class="col-xs-4">A pony is a small horse (Equus ferus caballus). Depending on context, a pony may be a horse that is under an approximate or exact height at the withers, or a small horse with a specific conformation and temperament. There are many different breeds. </div> 
-                <div class="col-xs-4">Compared to other horses, ponies often exhibit thicker manes, tails and overall coat, as well as proportionally shorter legs, wider barrels, heavier bone, thicker necks, and shorter heads with broader foreheads. The word "pony" derives from the old French poulenet, meaning foal, a young, immature horse, but this is not the modern meaning; unlike a horse foal, a pony remains small when fully grown. </div> 
-                <div class="col-xs-4">However, on occasion, people who are unfamiliar with horses may confuse an adult pony with a foal...</div> 
+                <div class="col-xs-4">A pony is a small horse (Equus ferus caballus). Depending on context, a pony may be a horse that is under an approximate or exact height at the withers, or a small horse with a specific conformation and temperament. There are many different breeds. </div>
+                <div class="col-xs-4">Compared to other horses, ponies often exhibit thicker manes, tails and overall coat, as well as proportionally shorter legs, wider barrels, heavier bone, thicker necks, and shorter heads with broader foreheads. The word "pony" derives from the old French poulenet, meaning foal, a young, immature horse, but this is not the modern meaning; unlike a horse foal, a pony remains small when fully grown. </div>
+                <div class="col-xs-4">However, on occasion, people who are unfamiliar with horses may confuse an adult pony with a foal...</div>
             </div>
         </div>
 
-</div>        
+    <h2>Sticky elements <code>.ev-top-sticky</code> <code>.ev-bottom-sticky</code> </h2>
+
+    <p>
+        <em>Experimental:</em> This isn't supported in all browser and should only be used to improve user experience
+    </p>
+    <p>
+        When out of the screen, the element stays at the top/bottom like a position absolute
+    </p>
+
+
+    <div class="example">
+        <header class="ev-top-sticky">
+            My sticky top header
+        </header>
+        <div class="row">
+            <div class="col-sm-2">
+                The springbok (Antidorcas marsupialis) is a medium-sized brown and white antelope-gazelle of southwestern Africa. It is extremely fast and can reach speeds of 100 km/h (62 mph) and can leap 4 m (13 feet) through the air. The common name "springbok" comes from the Afrikaans and Dutch words spring = jump and bok = male antelope or goat.
+
+    The specific epithet marsupialis (Latin: marsupium, "pocket") derives from a pocket-like skin flap which extends along the middle of the back from the tail onwards. When the male springbok is showing off his strength to attract a mate, or to ward off predators, he starts off in a stiff-legged trot, jumping up into the air with an arched back every few paces and lifting the flap along his back. Lifting the flap causes the long white hairs under the tail to stand up in a conspicuous fan shape, which in turn emits a strong scent of sweat. This ritual is known as stotting or pronking from the Afrikaans meaning to boast or show off.
+            </div>
+        </div>
+        <footer class="ev-bottom-sticky">
+            My sticky bottom footer
+        </footer>
+
+</div>
 {% endraw %}
 
 {% include script.html %}
