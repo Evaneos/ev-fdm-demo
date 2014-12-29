@@ -85,6 +85,7 @@ def installDependencies(directory, version):
         run('npm install')
         run('bower install')
         run('gulp build')
+        run('jekyll build')
 
 def check(branch):
     with settings(warn_only=False):

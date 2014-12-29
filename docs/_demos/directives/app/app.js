@@ -1,27 +1,30 @@
-'use strict';
-var app = angular.module('demo', ['ev-fdm']);
+(function() {
+	'use strict';
+	angular.module('directive-demo', ['ev-fdm'])
+		.filter('i18n', function () {
+			return function (input) {
+				return input;
+			};
+		})
+		.config(['evSelectLanguageProvider', function (cfg) {
+			cfg.setAvailableLang(['fr', 'en', 'es', 'it']);
+		}])
+        .controller('EditSectionController', ['$scope', '$q', function($scope, $q) {
+            var person = { name: 'Test' };
+            $scope.person = angular.copy(person);
 
-
-app.controller('TagController', ['$scope', function($scope) {
-  $scope.context = {
-    editMode: false,
-    tags: [
-      { name: 'Tartiflette'},
-      { name: 'Endives au jambon'},
-      { name: 'Petit salé'},
-      { name: 'Ouiche'},
-      { name: 'Camembert'},
-      { name: 'Saucisses de morteaux'},
-      { name: 'Lasagnes'}
-    ]
-  };
-
-  $scope.newPlate = {
-    name: ''
-  };
-
-  $scope.addPlate = function() {
-    $scope.context.tags.unshift(angular.copy($scope.newPlate));
-    $scope.newPlate.name = '';
-  };
-}]);
+            $scope.nameSection = {
+                onSave: function() {
+                    if (!$scope.person.saveFail) {
+                        person = angular.copy($scope.person);
+                        return $q.when();
+                    } else {
+                        return $q.reject();
+                    }
+                },
+                onCancel: function() {
+                    $scope.person = angular.copy(person);
+                }
+            };
+        }]);
+}) ();

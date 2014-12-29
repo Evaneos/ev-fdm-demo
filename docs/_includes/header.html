@@ -1,5 +1,4 @@
-<div id="lisette-menu" class="navbar navbar-inverse affix">
-
+<div class="navbar navbar-inverse affix">
         <ul id="small-menu" class="nav navbar-right navbar-nav">
             <li class="dropdown module menu-item">
                 <a class="toggle dropdown-toggle" data-toggle="dropdown" href="#">
@@ -30,7 +29,7 @@
             </li>
         </ul>
 
-        <ul id="lisette-menu-items" class="nav navbar-nav" style="left: 100px; right: 200px;">
+        <ul class="nav navbar-nav" style="left: 100px; right: 200px;">
             {% for demo in site.demos | where:"is_index","true" %}
                 {% if demo.is_index %}
                     <li class="menu-item module">
@@ -43,4 +42,3 @@
             {% endfor %}
         </ul>
     </div>
-

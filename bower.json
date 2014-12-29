@@ -11,7 +11,10 @@
     "tests"
   ],
   "dependencies": {
-    "ev-fdm": "git@github.com:Evaneos/ev-fdm.git#15b27855e9004d995fccc46b2ddf37ace246d5f2",
+    "ev-fdm": "git@github.com:Evaneos/ev-fdm.git#design_improvement",
     "octicons": "*"
+  },
+  "resolutions": {
+    "angular": "1.2.16"
   }
 }
